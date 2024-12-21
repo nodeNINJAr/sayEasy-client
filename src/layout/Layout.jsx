@@ -1,10 +1,20 @@
 import React from 'react';
+import Footer from '../components/Footer';
+import Navbar from '../components/navbar/Navbar';
+import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
     return (
-        <div>
-            <h1 className='text-5xl text-red-500'>hello form lay out</h1>
-        </div>
+         <div className='container mx-auto'>
+         {/* navbar */}
+           <Navbar/>
+           {/* main */}
+              <main className='min-h-screen'>
+                 <Outlet/>    
+             </main>
+           {/* footer */}
+           <Footer/>
+         </div>
     );
 };
 
