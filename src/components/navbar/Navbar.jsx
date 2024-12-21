@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Profile from "./Profile";
 
 const Navbar = () => {
@@ -36,14 +36,18 @@ const Navbar = () => {
         </ul>
 
         {/* Button for large screens */}
-        <div className="flex justify-start items-center gap-3 ">
+        <div className="flex justify-start items-center gap-3  capitalize">
           <Profile />
-          <button className="ml-6 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-            Log in
-          </button>
-          <button className=" bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-            Sign Up
-          </button>
+          <Link to='/login'>
+            <button className="ml-6 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+              Log in
+            </button>
+          </Link>
+          <Link to='/signUp'>
+            <button className="ml-6 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+              signUp
+            </button>
+          </Link>
         </div>
       </div>
 
