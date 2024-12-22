@@ -19,6 +19,7 @@ const AddTutorial = () => {
   const [formData, setFormData] = useState({
     name: user?.displayName,
     email: user?.email,
+    tutorImage:user?.photoURL,
     image: "",
     language: "",
     price: "",

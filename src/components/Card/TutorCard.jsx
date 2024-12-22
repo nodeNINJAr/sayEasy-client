@@ -4,7 +4,7 @@ import { HiOutlineGlobeAlt } from "react-icons/hi";
 import PropTypes from "prop-types";
 
 const TutorCard = ({ tutorData }) => {
-  const {tutorImage ,name, email,image,language,description,price,review} = tutorData || {};
+  const { name,tutorImage,language,description,price,review} = tutorData || {};
   return (
     <div className="flex flex-wrap mx-auto p-4 dark:bg-white shadow-lg rounded-md border bg-gray-800 border-gray-700">
       {/* Image Section */}
