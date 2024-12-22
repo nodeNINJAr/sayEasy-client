@@ -8,6 +8,7 @@ import MyTutorials from '../pages/private/MyTutorials';
 import BookedTutors from '../pages/private/BookedTutors';
 import Login from '../pages/auth/Login';
 import SignUp from '../pages/auth/SignUp';
+import PrivateRoute from '../pages/private/PrivateRoute';
 
 const Router = () => {
     return (
@@ -15,9 +16,9 @@ const Router = () => {
             <Route path='/' element={<Layout/>}>
                <Route index={true} element={<Home/>}/>
                <Route path='/find-tutors' element={<Tutors/>}/>
-               <Route path='/add-tutorial' element={<AddTutorial/>}/>
-               <Route path='/tutorials' element={<MyTutorials/>}/>
-               <Route path='/booked-tutors' element={<BookedTutors/>}/>
+               <Route path='/add-tutorial' element={<PrivateRoute><AddTutorial/></PrivateRoute>}/>
+               <Route path='/tutorials' element={<PrivateRoute><MyTutorials/></PrivateRoute>}/>
+               <Route path='/booked-tutors' element={<PrivateRoute><BookedTutors/></PrivateRoute>}/>
                 {/* auth */}
                 <Route path='/login' element={<Login/>}/>
                 <Route path='/signUp' element={<SignUp/>}/>

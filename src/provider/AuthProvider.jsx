@@ -12,7 +12,7 @@ const [user, setUser]= useState(null);
 
 // loader
 const [loader, setloader] = useState(true);
-console.log(user, loader)
+
 
 
 // sign in with google
