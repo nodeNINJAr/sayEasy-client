@@ -7,6 +7,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class', // Use 'class' strategy for manual dark mode toggle
   theme: {
     colors: {
 			transparent: 'transparent',

@@ -5,4 +5,28 @@
 @tailwind components;
 @tailwind utilities;
 
-/*  */
+/* slider */
+  /*  */
+.custom-prev,
+.custom-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20px!important;
+  cursor: pointer;
+  background-color: #e2e2e2a5;
+  color: rgb(139, 139, 139);
+  padding: 10px;
+  border-radius: 50%;
+
+}
+
+.custom-prev {
+  left:10px;
+ 
+}
+
+.custom-next {
+  right: 10px;
+}
+

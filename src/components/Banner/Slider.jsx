@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 const Slider = () => {
   return (
-    <>
+    <div className="swiper-one">
       <Swiper
         cssMode={true}
         navigation={true}
@@ -31,7 +31,7 @@ const Slider = () => {
         <SwiperSlide>Slide 8</SwiperSlide>
         <SwiperSlide>Slide 9</SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 };
 

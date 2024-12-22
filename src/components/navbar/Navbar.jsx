@@ -10,7 +10,7 @@ const Navbar = () => {
   const { userSignOut, user } = UseAuth();
   //
   const [isOpen, setIsOpen] = useState(false);
-
+  
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -24,9 +24,11 @@ const Navbar = () => {
         console.log(err);
       });
   };
+
+
   //
   return (
-    <nav className="bg-gray-800 text-white p-4">
+    <nav className=" bg-gray-900 dark:bg-gray-50 text-gray-100 dark:text-gray-800 p-4">
       <div className="flex items-center justify-between ">
         {/* Logo */}
         <div className="text-2xl font-bold flex justify-start items-center gap-4">
@@ -86,7 +88,7 @@ const Navbar = () => {
 
       {/* Menu for small screens */}
       {isOpen && (
-        <div className="absolute top-0 right-0 w-3/4 sm:w-1/2 h-full bg-gray-800 text-white p-6 md:hidden transition-all duration-300">
+        <div className="absolute top-0 right-0 w-3/4 sm:w-1/2 h-full bg-gray-800 z-50 text-white p-6 md:hidden transition-all duration-300">
           <ul className="space-y-4 capitalize font-figtree ">
             <li className="list-none">
               <NavLink to="/">Home</NavLink>
@@ -104,7 +106,6 @@ const Navbar = () => {
                   sign Out
                 </button>
               </Link>
-              
             </li>
           </ul>
         </div>
