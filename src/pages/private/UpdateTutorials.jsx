@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
+import UseAxiosSecure from "../../components/hooks/axiosInstance/axiosSecure";
+import { useLocation } from "react-router-dom";
 import {
   FaDollarSign,
   FaEnvelope,
@@ -7,27 +10,23 @@ import {
   FaStar,
   FaUser,
 } from "react-icons/fa";
-import UseAuth from "../../components/hooks/UseAuth";
-import toast from "react-hot-toast";
 import Lottie from "lottie-react";
-import addSuccecc from '../../assets/lottie json file/Main Scene.json'
-import UseAxiosSecure from "../../components/hooks/axiosInstance/axiosSecure";
-const AddTutorial = () => {
-  // custom axios
-  const axiosSecure = UseAxiosSecure()
-    // auth context
-    const { user} = UseAuth()
+import updatefailed from '../../assets/lottie json file/loginError.json'
+import updateSuccess from '../../assets/lottie json file/uploadComplete.json'
 
+
+// 
+const UpdateTutorials = () => {
+  // custom axios
+  const axiosSecure = UseAxiosSecure();
+  //data recived from my tutorials
+  const { state } = useLocation();
   // hold form value
   const [formData, setFormData] = useState({
-    name: user?.displayName,
-    email: user?.email,
-    tutorImage:user?.photoURL,
-    image: "",
-    language: "",
-    price: "",
-    description: "",
-    review: 0,
+    image: state?.image,
+    language: state?.language,
+    price: state?.price,
+    description: state?.description,
   });
   //
   const handleChange = (e) => {
@@ -37,33 +36,45 @@ const AddTutorial = () => {
       [name]: value,
     }));
   };
-  // form submit
-  const handleSubmit = async (e) => {
+  // form update
+  const handleUpdate = async (e) => {
     e.preventDefault();
     // send data to backend
     try {
-      await axiosSecure.post('/add-tutorials', formData)
-      toast.success("Tutorial added successfully! ➕ Your new entry has been saved. 🎉",{
-        duration: 3000,
-        position: 'top-right',
-        style: {
-          background: '#4caf50',
-          color: '#ececec',
-        },
-        icon: <Lottie className="w-20 h-14 mx-auto" animationData={addSuccecc} />,
-      })
-
+      const { data } = await axiosSecure.patch(`/update-tutorials/${state?._id}`, formData);
+      if(data.matchedCount === 1 && data.modifiedCount === 1){
+        toast.success("Update successful! 🎉 Your changes have been saved. ✅",{
+            duration: 3000,
+            position: 'top-right',
+            style: {
+              background: '#4caf50',
+              color: '#ececec',
+            },
+            icon: <Lottie className="w-14 h-14 mx-auto" animationData={updateSuccess} />,
+          });
+      }
+      if(data.matchedCount === 1 && data.modifiedCount === 0){
+        toast.success("Update failed! ⚠️ You need to change at least one value before saving. ✏️",{
+            duration: 3000,
+            position: 'top-right',
+            style: {
+              background: '#f44336',
+              color: '#ececec',
+            },
+            icon: <Lottie className="w-14 h-14 mx-auto" animationData={updatefailed} loop={true} />,
+          });
+      }
     } catch (err) {
-        toast.error(err.message,'Error happened')
+      toast.error(err.message, "Error happened");
     }
   };
-  //
+
   return (
     <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
       <h2 className="text-2xl font-semibold text-center mb-6">
-        Add Tutorial Form
+        Update Tutorial Form
       </h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleUpdate}>
         {/* Name Field */}
         <div className="mb-4">
           <label
@@ -76,10 +87,7 @@ const AddTutorial = () => {
             <input
               readOnly
               type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
+              defaultValue={state?.name}
               className="w-full p-2 pl-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your name"
             />
@@ -98,11 +106,7 @@ const AddTutorial = () => {
           <div className="mt-1 relative">
             <input
               readOnly
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
+              defaultValue={state?.email}
               className="w-full p-2 pl-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your email"
             />
@@ -212,11 +216,9 @@ const AddTutorial = () => {
           </label>
           <div className="mt-1 relative">
             <input
+             readOnly
               type="number"
-              id="review"
-              name="review"
-              value={formData.review}
-              onChange={handleChange}
+              defaultValue={state?.review}
               className="w-full p-2 pl-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter review score"
               min="0"
@@ -232,7 +234,7 @@ const AddTutorial = () => {
             type="submit"
             className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            Submit
+            Update
           </button>
         </div>
       </form>
@@ -240,4 +242,4 @@ const AddTutorial = () => {
   );
 };
 
-export default AddTutorial;
+export default UpdateTutorials;

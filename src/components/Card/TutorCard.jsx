@@ -1,5 +1,5 @@
 import React from "react";
-import { FaStar, FaUser, FaCommentDots } from "react-icons/fa";
+import { FaStar, FaUser } from "react-icons/fa";
 import { HiOutlineGlobeAlt } from "react-icons/hi";
 import PropTypes from "prop-types";
 
