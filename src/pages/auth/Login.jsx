@@ -1,6 +1,7 @@
 import React from "react";
 import UseAuth from "../../components/hooks/UseAuth";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Login = () => {
   // auth context
@@ -13,21 +14,23 @@ const Login = () => {
     const password = form.password.value;
     //  signIn/login with email pass
     signInUsingEmailpass(userEmail, password)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+       toast.success("🎉 Welcome back! You’ve successfully logged in. Let’s dive in and get started!")
       })
       .catch((err) => {
+        toast.error("❌ Login failed! Please check your email and password and try again.")
         console.log(err.message);
       });
   };
-  
+
 //   login with google
 const handleGoogleSignIn=()=>{
     signInWithGoogle()
-    .then((result) => {
-        console.log(result.user);
+    .then(() => {
+        toast.success("✅ You’ve signed in with Google successfully. Welcome to your account!")
       })
       .catch((err) => {
+        toast.error("⚠️ Google sign-in failed. Please try again or check your internet connection.")
         console.log(err.message);
       });
     

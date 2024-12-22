@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import UseAuth from "../../components/hooks/UseAuth";
+import toast from "react-hot-toast";
 
 const SignUp = () => {
   // auth context
@@ -15,8 +16,8 @@ const SignUp = () => {
     const password = form.password.value;
     //signUp with email pass
     signUpUsingEmailPass(userEmail, password)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+        toast.success("🎉 Congratulations! Your account has been successfully created. You can now log in and start exploring. Welcome aboard!")
         // update user name and photo url
         userProfileUpdate({ displayName: userName, photoURL: photoUrl })
           .then(() => {})
@@ -25,6 +26,7 @@ const SignUp = () => {
           });
       })
       .catch((err) => {
+        toast.error("❌ Signup failed! Please ensure all required fields are filled out correctly and try again.")
         console.log(err.message);
       });
   };
@@ -32,13 +34,13 @@ const SignUp = () => {
   //   login with google
 const handleGoogleSignIn=()=>{
     signInWithGoogle()
-    .then((result) => {
-        console.log(result.user);
+    .then(() => {
+      toast.success("✅ You’ve signed in with Google successfully. Welcome to your account!")
       })
       .catch((err) => {
+        toast.error("⚠️ Google sign-in failed. Please try again or check your internet connection.")
         console.log(err.message);
-      });
-    
+      });  
 }
 
   //
