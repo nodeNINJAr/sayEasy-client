@@ -5,7 +5,7 @@ import Stats from "../components/Stats";
 import LangCategory from "../components/langCategory/LangCategory";
 
 const Home = () => {
-
+ 
   return (
     <>
       <section className="py-20">

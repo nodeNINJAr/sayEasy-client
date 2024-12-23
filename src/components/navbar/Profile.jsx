@@ -57,7 +57,7 @@ const Profile = ({user}) => {
               <span className="text-sm font-medium">My Tutorials</span>
             </NavLink>
             <NavLink
-              to="/booked-tutors"
+              to="/tutors/booked"
               className="flex items-center gap-3 w-full  text-gray-200 dark:text-gray-700 hover:bg-gray-500 dark:hover:bg-gray-100 p-2 rounded"
             >
               <CiBookmarkCheck className="text-lg" />

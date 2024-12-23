@@ -1,69 +1,72 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
+import UseInfo from "../hooks/UseInfo";
+
 
 const CategoryCard = () => {
+    const {tutor} = UseInfo()
+  const categories = [
+    {
+      language: "english",
+      teachers: tutor?.filter(item=> item.language === 'english').length,
+      flag: "https://flagcdn.com/w320/gb.png",
+    },
+    {
+      language: "japanese",
+      teachers: tutor?.filter(item=> item.language === "japanese").length,
+      flag: "https://flagcdn.com/w320/jp.png",
+    },
+    {
+      language: "spanish",
+      teachers: tutor?.filter(item=> item.language === "spanish").length,
+      flag: "https://flagcdn.com/w320/es.png",
+    },
+    {
+      language: "chinese",
+      teachers: tutor?.filter(item=> item.language === "chinese").length,
+      flag: "https://flagcdn.com/w320/cn.png",
+    },
+    {
+      language: "french",
+      teachers: tutor?.filter(item=> item.language === "french").length,
+      flag: "https://flagcdn.com/w320/fr.png",
+    },
+    {
+      language: "italian",
+      teachers: tutor?.filter(item=> item.language === "italian").length,
+      flag: "https://flagcdn.com/w320/it.png",
+    },
+    {
+      language: "german",
+      teachers: tutor?.filter(item=> item.language === "german").length,
+      flag: "https://flagcdn.com/w320/de.png",
+    },
+    {
+      language: "korean",
+      teachers: tutor?.filter(item=> item.language === "korean").length,
+      flag: "https://flagcdn.com/w320/kr.png",
+    },
+    {
+      language: "arabic",
+      teachers: tutor?.filter(item=> item.language === "arabic").length,
+      flag: "https://flagcdn.com/w320/sa.png",
+    },
+    {
+      language: "portuguese",
+      teachers: tutor?.filter(item=> item.language === "portuguese").length,
+      flag: "https://flagcdn.com/w320/pt.png",
+    },
+  ];
+
   //
   const navigate = useNavigate();
   //
   const handleCategory = (cate) => {
     navigate(`/tutors/${cate}`);
   };
-  //
-  const categories = [
-    {
-      language: "english",
-      teachers: 5003,
-      flag: "https://flagcdn.com/w320/gb.png",
-    },
-    {
-      language: "japanese",
-      teachers: 988,
-      flag: "https://flagcdn.com/w320/jp.png",
-    },
-    {
-      language: "spanish",
-      teachers: 2595,
-      flag: "https://flagcdn.com/w320/es.png",
-    },
-    {
-      language: "chinese",
-      teachers: 988,
-      flag: "https://flagcdn.com/w320/cn.png",
-    },
-    {
-      language: "french",
-      teachers: 1064,
-      flag: "https://flagcdn.com/w320/fr.png",
-    },
-    {
-      language: "italian",
-      teachers: 783,
-      flag: "https://flagcdn.com/w320/it.png",
-    },
-    {
-      language: "german",
-      teachers: 1200,
-      flag: "https://flagcdn.com/w320/de.png",
-    },
-    {
-      language: "korean",
-      teachers: 654,
-      flag: "https://flagcdn.com/w320/kr.png",
-    },
-    {
-      language: "arabic",
-      teachers: 950,
-      flag: "https://flagcdn.com/w320/sa.png",
-    },
-    {
-      language: "portuguese",
-      teachers: 700,
-      flag: "https://flagcdn.com/w320/pt.png",
-    },
-  ];
+ 
 
   return (
     <>
@@ -96,6 +99,5 @@ const CategoryCard = () => {
   );
 };
 
-CategoryCard.propTypes = {};
 
 export default CategoryCard;

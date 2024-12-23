@@ -3,6 +3,8 @@ import { FaStar, FaUser } from "react-icons/fa";
 import { HiOutlineGlobeAlt } from "react-icons/hi";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import Lottie from "lottie-react";
+import arrowRight from '../../assets/lottie json file/details.json'
 
 const TutorCard = ({ tutorData , categoriosData}) => {
   const {_id, name, tutorImage, language, description, price, review } =
@@ -72,8 +74,8 @@ const TutorCard = ({ tutorData , categoriosData}) => {
 
         {/* Button */}
         <Link to={`/tutor/${_id}`}>
-          <button className="mt-4 px-6 py-2 text-sm font-medium text-white bg-pink-500 rounded-md hover:bg-pink-600 transition">
-            Book trial lesson
+          <button className="mt-4 px-4 py-2 text-sm font-medium capitalize text-white bg-pink-500 rounded-md hover:bg-pink-600 transition flex justify-between items-center gap-2">
+            <span>Tutor details</span> <Lottie className="w-8 h-8" animationData={arrowRight} loop={true}></Lottie>
           </button>
         </Link>
       </div>
@@ -82,8 +84,8 @@ const TutorCard = ({ tutorData , categoriosData}) => {
 };
 
 TutorCard.propTypes = {
-  tutorData: PropTypes.object.isRequired,
-  categoriosData:PropTypes.object.isRequired
+  tutorData: PropTypes.object,
+  categoriosData:PropTypes.object,
 };
 
 export default TutorCard;

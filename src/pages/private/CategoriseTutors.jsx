@@ -3,6 +3,7 @@ import UseAxiosSecure from "../../components/hooks/axiosInstance/axiosSecure";
 import { useParams } from "react-router-dom";
 import TutorCard from "../../components/Card/TutorCard";
 
+
 const CategoriseTutors = () => {
   // custom axios hooks
   const axiosSecure = UseAxiosSecure();
