@@ -66,7 +66,7 @@ const modernDelete=(tutorial_id)=>{
   return (
     <div className="overflow-x-auto w-11/12 mx-auto">
       <table className="table">
-        <thead className="text-sm font-figtree font-medium capitalize bg-slate-200">
+        <thead className="text-sm font-figtree font-medium capitalize dark:bg-slate-400 bg-slate-200">
           <tr>
             <th>name</th>
             <th>category</th>
@@ -75,13 +75,13 @@ const modernDelete=(tutorial_id)=>{
             <th>review</th>
             <th></th>
             <th></th>
-            <th></th>
+            <th className="text-red-700">Total Tutorial : {specifiedTutorials?.length}</th>
           </tr>
         </thead>
         {specifiedTutorials.map((tutorial) => (
           <tbody key={tutorial._id}>
             {/* row 1 */}
-            <tr className="hover:bg-slate-600 dark:hover:bg-slate-100">
+            <tr className="dark:hover:bg-slate-500 hover:bg-slate-200 dark:bg-slate-600 dark:border dark:border-slate-500">
               <td>
                 <div className="flex items-center gap-3">
                   <div className="avatar">

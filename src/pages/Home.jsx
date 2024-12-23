@@ -4,7 +4,6 @@ import { AuthContext } from "../provider/AuthProvider";
 import Slider from "../components/Banner/Slider";
 import Stats from "../components/Stats";
 import LangCategory from "../components/langCategory/LangCategory";
-import DarkModeToggle from "../components/darkmode/DarkModeToggle";
 
 const Home = () => {
   const { name } = useContext(AuthContext);
@@ -15,11 +14,11 @@ const Home = () => {
         <Slider />
       </section>
       {/* stats */}
-      <section className="py-14 bg-gray-800 dark:bg-gray-100 text-gray-100 dark:text-gray-800">
+      <section className="py-14 dark:bg-slate-600 bg-gray-100 dark:text-gray-100 text-gray-800">
           <Stats/>
       </section>
        {/* categorySlider */}
-       <section className="py-14 bg-gray-800 dark:bg-gray-50 text-gray-100 dark:text-gray-800">
+       <section className="py-14 dark:bg-slate-600 bg-gray-100 dark:text-gray-100 text-gray-800 mt-14">
           <LangCategory/>
       </section>
       

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaUserAltSlash } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import Profile from "./Profile";
 import UseAuth from "../hooks/UseAuth";
@@ -10,7 +10,7 @@ const Navbar = () => {
   const { userSignOut, user } = UseAuth();
   //
   const [isOpen, setIsOpen] = useState(false);
-  
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -25,10 +25,9 @@ const Navbar = () => {
       });
   };
 
-
   //
   return (
-    <nav className=" bg-gray-900 dark:bg-gray-50 text-gray-100 dark:text-gray-800 p-4">
+    <nav className=" dark:bg-gray-900 bg-gray-50 dark:text-gray-100 text-gray-800 p-4">
       <div className="flex items-center justify-between ">
         {/* Logo */}
         <div className="text-2xl font-bold flex justify-start items-center gap-4">
@@ -42,17 +41,14 @@ const Navbar = () => {
         </div>
 
         {/* Menu for large screens */}
-        <ul className="hidden md:flex space-x-6 capitalize font-figtree justify-end w-1/2 lg:w-7/12 mx-auto">
+        <ul className="hidden md:flex space-x-6 capitalize font-figtree justify-end items-center w-1/2 lg:w-7/12">
           <li className="list-none">
             <NavLink to="/">Home</NavLink>
           </li>
           <li className="list-none">
-            <NavLink to="/find-tutors">Find tutors</NavLink>
+            <NavLink to="/tutors">Find tutors</NavLink>
           </li>
-        </ul>
 
-        {/* Button for large screens */}
-        <div className="flex justify-start items-center gap-3  capitalize">
           {user ? (
             <>
               {/* user profile */}
@@ -61,7 +57,7 @@ const Navbar = () => {
               <Link to="/">
                 <button
                   onClick={handleSignOut}
-                  className="hidden md:flex ml-6 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                  className="w-full  capitalize bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
                 >
                   sign Out
                 </button>
@@ -70,17 +66,28 @@ const Navbar = () => {
           ) : (
             <>
               {/* login */}
-              <Link to="/login">
-                <button className="ml-6 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-                  Log in
-                </button>
-              </Link>
-              {/* signUp */}
-              <Link to="/signUp">
-                <button className="ml-6 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-                  signUp
-                </button>
-              </Link>
+              <li className="list-none">
+                <NavLink to="/login">Log in</NavLink>
+              </li>
+              <li className="list-none">
+                <NavLink to="/signUp">signUp</NavLink>
+              </li>
+            </>
+          )}
+        </ul>
+        <div className="flex md:hidden">
+          {user ? (
+            <>
+              {/* user profile */}
+              <Profile user={user} />
+            </>
+          ) : (
+            <>
+              <div className="flex flex-col items-center justify-center">
+                <div className="flex space-x-5">
+                   <span className="w-12 h-12 rounded-full ring-2 ring-offset-4 dark:bg-gray-500 dark:ring-gray-300 dark:ring-offset-gray-100 flex justify-center items-center"><FaUserAltSlash className="text-2xl" /></span>
+                </div>
+              </div>
             </>
           )}
         </div>
@@ -94,19 +101,33 @@ const Navbar = () => {
               <NavLink to="/">Home</NavLink>
             </li>
             <li className="list-none">
-              <NavLink to="/find-tutors">Find tutors</NavLink>
+              <NavLink to="/tutors">Find tutors</NavLink>
             </li>
-            <li>
-              {/* signOut */}
-              <Link to="/">
-                <button
-                  onClick={handleSignOut}
-                  className="w-full capitalize bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-                >
-                  sign Out
-                </button>
-              </Link>
-            </li>
+            {user ? (
+              <>
+                <li>
+                  {/* signOut */}
+                  <Link to="/">
+                    <button
+                      onClick={handleSignOut}
+                      className="w-full capitalize bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                    >
+                      sign Out
+                    </button>
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <>
+                {/* login */}
+                <li className="list-none">
+                  <NavLink to="/login">Log in</NavLink>
+                </li>
+                <li className="list-none">
+                  <NavLink to="/signUp">signUp</NavLink>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       )}

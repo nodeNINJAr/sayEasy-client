@@ -11,7 +11,6 @@ const Tutors = () => {
     // fetch all data
     const fetchALLTutor = async()=>{
        const {data} = await axiosSecure.get('/tutorials')
-       console.log(data);
        setTutorsData(data)
     }
     // for initial run

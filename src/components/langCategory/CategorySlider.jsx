@@ -88,7 +88,7 @@ const CategorySlider = (props) => {
       >
         {slides?.map((slide, idx) => (
           <SwiperSlide key={idx}>
-            <div onClick={()=>handleCategory(slide?.language)} className="flex overflow-hidden rounded-lg select-none cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-100 transition-all ease-in-out duration-300">
+            <div onClick={()=>handleCategory(slide?.language)} className="flex overflow-hidden rounded-lg select-none cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-500 transition-all ease-in-out duration-300">
               <div className="flex items-center justify-start gap-2 px-4 sm:w-[100px]">
                 <img
                   className="h-10 w-full rounded-lg mx-auto object-cover"
@@ -97,7 +97,7 @@ const CategorySlider = (props) => {
                 />
               </div>
               <div className="p-1">
-                <p className="text-lg font-semibold text-[#656565] font-figtree capitalize">
+                <p className="text-lg font-semibold dark:text-white text-[#656565] font-figtree capitalize">
                   {slide?.language}
                 </p>
                 <p className="text-[#a9a9a9] text-sm capitalize font-fira">
