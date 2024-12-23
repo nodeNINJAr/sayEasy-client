@@ -14,8 +14,8 @@ const ProductSearch = ({tutorsData , handleSearch}) => {
           <div className="flex items-center">
             <input
               type="text"
-              placeholder="Search products"
-              className="input input-bordered w-full  mr-2"
+              placeholder="Search Tutor By Language"
+              className="input input-bordered dark:border-slate-100 w-full  mr-2 text-gray-400"
             
               onBlur={(e)=>handleSearch(e.target.value)}
             />

@@ -4,9 +4,9 @@ import { HiOutlineGlobeAlt } from "react-icons/hi";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const TutorCard = ({ tutorData }) => {
+const TutorCard = ({ tutorData , categoriosData}) => {
   const {_id, name, tutorImage, language, description, price, review } =
-    tutorData || {};
+    tutorData || categoriosData || {};
   return (
     <div className="flex flex-wrap mx-auto p-4 bg-white shadow-lg rounded-md border dark:bg-gray-700 dark:border-gray-600 border-gray-200">
       {/* Image Section */}
@@ -83,6 +83,7 @@ const TutorCard = ({ tutorData }) => {
 
 TutorCard.propTypes = {
   tutorData: PropTypes.object.isRequired,
+  categoriosData:PropTypes.object.isRequired
 };
 
 export default TutorCard;

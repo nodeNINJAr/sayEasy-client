@@ -12,6 +12,7 @@ import PrivateRoute from '../pages/private/PrivateRoute';
 import UpdateTutorials from '../pages/private/UpdateTutorials';
 import NotFoundPage from '../pages/NotFoundPage';
 import TutorDetails from '../pages/private/TutorDetails';
+import CategoriseTutors from '../pages/private/CategoriseTutors';
 
 const Router = () => {
     return (
@@ -19,10 +20,12 @@ const Router = () => {
             <Route path='/' element={<Layout/>}>
                <Route index={true} element={<Home/>}/>
                <Route path='/tutors' element={<Tutors/>}/>
-               <Route path='/add-tutorial' element={<PrivateRoute><AddTutorial/></PrivateRoute>}/>
+               {/* private route */}
                <Route path='/tutorials' element={<PrivateRoute><MyTutorials/></PrivateRoute>}/>
-               <Route path='/booked-tutors' element={<PrivateRoute><BookedTutors/></PrivateRoute>}/>
                <Route path='/tutor/:id' element={<PrivateRoute><TutorDetails/></PrivateRoute>}/>
+               <Route path='/tutors/:category' element={<PrivateRoute><CategoriseTutors/></PrivateRoute>}/>
+               <Route path='/booked-tutors' element={<PrivateRoute><BookedTutors/></PrivateRoute>}/>
+               <Route path='/add-tutorial' element={<PrivateRoute><AddTutorial/></PrivateRoute>}/>
                <Route path='/update-tutorial/:id' element={<PrivateRoute><UpdateTutorials/></PrivateRoute>}/>
                 {/* auth */}
                 <Route path='/login' element={<Login/>}/>

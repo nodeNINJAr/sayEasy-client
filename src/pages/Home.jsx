@@ -1,13 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import { AuthContext } from "../provider/AuthProvider";
 import Slider from "../components/Banner/Slider";
 import Stats from "../components/Stats";
 import LangCategory from "../components/langCategory/LangCategory";
 
 const Home = () => {
-  const { name } = useContext(AuthContext);
-  console.log(name);
+
   return (
     <>
       <section className="py-20">
