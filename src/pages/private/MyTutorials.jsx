@@ -88,7 +88,7 @@ const modernDelete=(tutorial_id)=>{
                     <div className="mask mask-squircle h-12 w-12">
                       <img
                         src={tutorial?.image}
-                        alt="Avatar Tailwind CSS Component"
+                        alt="tutorial image"
                       />
                     </div>
                   </div>
@@ -107,9 +107,11 @@ const modernDelete=(tutorial_id)=>{
               <td> <span className="badge badge-ghost badge-neutral capitalize truncate ">{tutorial?.price} taka</span> </td>
               <td> <span className="badge badge-ghost badge-neutral capitalize truncate">{tutorial?.review} person</span></td>
               <th>
-                <button className=" bg-[#efefef] flex justify-start gap-2 px-2 py-1 rounded-lg items-center text-xs font-medium truncate hover:bg-slate-400 transition-all duration-300 text-slate-600 ">
-                  <span>Tutorial details</span> <IoArrowRedoOutline />
-                </button>
+                 <Link to={`/tutor/${tutorial?._id}`}>
+                    <button className=" bg-[#efefef] flex justify-start gap-2 px-2 py-1 rounded-lg items-center text-xs font-medium truncate hover:bg-slate-400 transition-all duration-300 text-slate-600 ">
+                      <span>Tutorial details</span> <IoArrowRedoOutline />
+                    </button>
+                 </Link>
               </th>
               <th>
                 <Link to={`/update-tutorial/${tutorial?._id}`} state={tutorial}>

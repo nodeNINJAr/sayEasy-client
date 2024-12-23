@@ -4,107 +4,8 @@ import { Link, useParams } from "react-router-dom";
 import { FaFacebook, FaTwitter, FaInstagram, FaEnvelope, FaPhone } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
-
-
-    // <div className="p-5 mx-auto sm:p-10 md:p-16 bg-gray-800 dark:bg-gray-100 text-gray-100 dark:text-gray-800">
-    //   <div className="flex flex-col max-w-3xl mx-auto overflow-hidden rounded">
-    //     <img
-    //       src={
-    //         tutorDetails?.image || "https://source.unsplash.com/75x75/?portrait"
-    //       }
-    //       alt=""
-    //       className="w-full h-60 sm:h-96 bg-gray-500 dark:bg-gray-500"
-    //     />
-    //     <div className="p-2 pb-12 mx-auto -mt-16 space-y-6 lg:max-w-2xl sm:px-10 sm:mx-12 lg:rounded-md bg-gray-800 dark:bg-gray-50">
-    //       <div className="max-w-2xl px-6 py-16 mx-auto space-y-12">
-    //         <article className="space-y-8 text-gray-50 dark:text-gray-900">
-    //           <div className="space-y-6">
-    //             <h1 className="text-2xl font-bold md:tracking-tight md:text-3xl font-montserrat">
-    //               Connect with {tutorDetails?.name} to learn the{" "}
-    //               {tutorDetails?.language} language effectively and improve your
-    //               communication skills step by step! 📚
-    //             </h1>
-    //             <div className="flex items-start justify-between md:space-x-2">
-    //               <div className="flex justify-start items-center gap-3">
-    //                 <img
-    //                   src={
-    //                     tutorDetails?.image ||
-    //                     "https://source.unsplash.com/75x75/?portrait"
-    //                   }
-    //                   alt=""
-    //                   className="w-8 h-8 border rounded-full bg-gray-500 dark:bg-gray-500 border-gray-700 dark:border-gray-300"
-    //                 />
-    //                 <p className="text-sm">
-    //                   {tutorDetails?.name} • July 19th, 2021
-    //                 </p>
-    //               </div>
-    //               <div className="flex flex-col justify-start items-start gap-4">
-    //                 <p className="flex-shrink-0 mt-3 md:mt-0 capitalize bg-slate-400 dark:bg-[#f2f2f2] px-3 py-1 rounded-xl text-sm font-fira font-medium">
-    //                   language : • {tutorDetails?.language}
-    //                 </p>
-    //                 <p className="flex-shrink-0 mt-3 md:mt-0 capitalize bg-slate-400 dark:bg-[#f2f2f2] px-3 py-1 rounded-xl text-sm font-fira font-medium">
-    //                   price : {tutorDetails?.price} Taka
-    //                 </p>
-    //                 <p className="flex-shrink-0 mt-3  md:mt-0 capitalize bg-slate-400 dark:bg-[#f2f2f2] px-3 py-1 rounded-xl text-sm font-fira font-medium">
-    //                   Reviewed by {tutorDetails?.review} Person
-    //                 </p>
-    //                 <Link>
-    //                   <button className="px-3 py-1 rounded-sm hover:underline bg-violet-400 dark:bg-violet-600 text-gray-900 dark:text-gray-50 font-medium font-montserrat">BooK</button>
-    //                 </Link>
-    //               </div>
-    //             </div>
-    //           </div>
-    //           <div className="text-gray-100 dark:text-gray-800">
-    //             <h1 className="inline-block capitalize bg-slate-400 dark:bg-[#f2f2f2] px-3 py-1 rounded-md text-xl font-fira font-medium">Description : </h1>
-    //             <p>
-    //               Insert the actual text content here...
-    //               {tutorDetails?.description}
-    //             </p>
-    //           </div>
-    //         </article>
-    //         <div>
-    //           <div className="flex flex-wrap py-6 gap-2 border-t border-dashed border-gray-400 dark:border-gray-600">
-                
-    //           </div>
-    //           <div className="space-y-2">
-    //             <h4 className="text-lg font-semibold">Related posts</h4>
-    //             <ul className="ml-4 space-y-1 list-disc">
-    //               <li>
-    //                 <a
-    //                   rel="noopener noreferrer"
-    //                   href="#"
-    //                   className="hover:underline"
-    //                 >
-    //                   Nunc id magna mollis
-    //                 </a>
-    //               </li>
-    //               <li>
-    //                 <a
-    //                   rel="noopener noreferrer"
-    //                   href="#"
-    //                   className="hover:underline"
-    //                 >
-    //                   Duis molestie, neque eget pretium lobortis
-    //                 </a>
-    //               </li>
-    //               <li>
-    //                 <a
-    //                   rel="noopener noreferrer"
-    //                   href="#"
-    //                   className="hover:underline"
-    //                 >
-    //                   Mauris nec urna volutpat, aliquam lectus sit amet
-    //                 </a>
-    //               </li>
-    //             </ul>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
   
-
+//
 const TutorDetails = () => {
     // custom axios hooks
     const axiosSecure = UseAxiosSecure();
@@ -124,7 +25,7 @@ const TutorDetails = () => {
     console.log(tutorInfo);
     //
      return (
-        <div className=" w-11/12 mx-auto p-6  dark:text-gray-200 transition duration-300">
+        <div className=" sm:w-11/12 mx-auto p-6 sm:p-0  dark:text-gray-200 transition duration-300">
           {/* Header Section */}
           <div className="flex flex-wrap justify-between items-center bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
             <div className="flex items-center space-x-6">
