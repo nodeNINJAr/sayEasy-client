@@ -1,5 +1,5 @@
 import React from "react";
-import { FaStar, FaUser } from "react-icons/fa";
+import { FaRegHeart, FaShieldAlt, FaStar, FaUser } from "react-icons/fa";
 import { HiOutlineGlobeAlt } from "react-icons/hi";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
@@ -10,76 +10,56 @@ const TutorCard = ({ tutorData , categoriosData}) => {
   const {_id, name, tutorImage, language, description, price, review } =
     tutorData || categoriosData || {};
   return (
-    <div className="flex flex-wrap mx-auto p-4 bg-white shadow-lg rounded-md border dark:bg-gray-700 dark:border-gray-600 border-gray-200">
-      {/* Image Section */}
+    <div className="col-span-2 p-4 sm:py-4 sm:px-6 bg-white dark:bg-gray-700 border dark:border-gray-700 border-gray-200 rounded-lg shadow-md font-figtree">
+    {/* Header Section */}
+    <div className="flex items-center">
+      {/* Profile Image */}
       <img
-        src={tutorImage || "https://via.placeholder.com/120"}
-        alt="Tutor"
-        className="w-24 h-24 rounded-full border shadow-sm"
+        className="w-16 h-16 rounded-full"
+        src={tutorImage || "https://via.placeholder.com/64"}
+        alt="Tutor Profile"
       />
-
-      {/* Info Section */}
-      <div className="ml-4 flex-1 flex-wrap">
-        {/* Name and Badge */}
-        <div className="flex justify-between">
-          <h2 className="text-lg font-semibold text-gray-800 dark:text-white">
-            {name}
-            <span className="ml-1 text-sm text-gray-500 dark:text-gray-400">
-              🇵🇱
-            </span>
-          </h2>
-        </div>
-
-        {/* Language and Lessons */}
-        <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-          <HiOutlineGlobeAlt className="inline-block mr-1 text-gray-500" />{" "}
-          {language}
+      {/* Name and Title */}
+      <div className="ml-4">
+        <h3 className="text-lg font-semibold font-fira dark:text-[#c2c2c2] text-[#585858]">{name}</h3>
+        <p className="text-sm dark:text-[#9b9b9b] text-gray-500 flex items-center capitalize">
+          {language} language Tutor <FaShieldAlt className="ml-1 text-green-500" />
         </p>
-        <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-          <FaUser className="inline-block mr-1 text-gray-500" /> 24 active
-          students · 2,712 lessons
-        </p>
-        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-          Speaks English (Proficient), Polish (Native)
-        </p>
-
-        {/* Description */}
-        <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-          {description.substring(0, 60)}...
-        </p>
-      </div>
-
-      {/* Rating and Price Section */}
-      <div className="flex flex-col items-end ">
-        {/* Rating */}
-        <div className="flex items-center">
-          <FaStar className="text-yellow-500 mr-1" />
-          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
-            5
-          </span>
-          <span className="text-xs text-gray-500 dark:text-gray-400 ml-1">
-            ({review}reviews)
-          </span>
-        </div>
-
-        {/* Price */}
-        <div className="mt-2 text-right">
-          <span className="text-lg font-bold text-gray-800 dark:text-white">
-            BDT {price}
-          </span>
-          <span className="text-sm text-gray-500 dark:text-gray-400 ml-1">
-            50-min lesson
-          </span>
-        </div>
-
-        {/* Button */}
-        <Link to={`/tutor/${_id}`}>
-          <button className="mt-4 px-4 py-2 text-sm font-medium capitalize text-white bg-pink-500 rounded-md hover:bg-pink-600 transition flex justify-between items-center gap-2">
-            <span>Tutor details</span> <Lottie className="w-8 h-8" animationData={arrowRight} loop={true}></Lottie>
-          </button>
-        </Link>
       </div>
     </div>
+
+    {/* Languages */}
+    <div className="mt-4 flex justify-between sm:justify-start items-center gap-1 sm:gap-4 truncate">
+      <p className="text-sm">
+        <span className="font-semibold dark:text-[#9b9b9b] text-[#747474]">SPEAKS:</span> 
+        <span className="text-green-500 ml-1 capitalize">{language}</span> 
+        <span className="text-gray-500 ml-1">(Native)</span>
+      </p>
+      <p className="text-sm">
+        <span className="font-semibold uppercase dark:text-[#9b9b9b] text-[#747474] truncate">Reviews: 5⭐({review})</span> 
+      </p>
+    </div>
+
+    {/* Description */}
+    <div className="mt-4 dark:text-[#7d7d7d] text-gray-700">
+      <p className="truncate">{description.substring(0,170)}...</p>
+    </div>
+
+    {/* Pricing and Actions */}
+    <div className="flex justify-between items-center mt-4 gap-2">
+      <p title={`USD ${price} / hour`} className="text-base font-semibold text-gray-800 truncate ">USD {price} / hour</p>
+    {/* Button */}
+    <div className="flex justify-center items-center gap-2 ">
+      <span className="bg-gray-300 dark:bg-gray-600 p-2 rounded-full cursor-pointer"><FaRegHeart className="text-xl text-[#818181]" /></span>
+    <Link to={`/tutor/${_id}`}>
+         <button className="truncate px-3 py-[2px] text-sm font-semibold rounded-full capitalize text-[#818181] dark:bg-gray-600 bg-[#E5E8ED] hover:bg-[#d7dadf] transition flex justify-between items-center gap-2">
+            <span>Tutor details</span> <Lottie className="w-8 h-8" animationData={arrowRight} loop={true}></Lottie>
+         </button>
+      </Link>
+    </div>
+    </div>
+  </div>
+
   );
 };
 

@@ -7,7 +7,8 @@ const InfoProvider = ({ children }) => {
   //
   const axiosSecure = UseAxiosSecure();
   //
-  const [tutor, setTutors] = useState([]);
+  const [tutors, setTutors] = useState([]);
+  const [refresh , setRefresh] = useState(false);
 
   // fetch all data
   const fetchALLTutor = async () => {
@@ -17,11 +18,13 @@ const InfoProvider = ({ children }) => {
   // for initial run
   useEffect(() => {
     fetchALLTutor();
-  }, []);
+  }, [refresh]);
 
   //
   const tutorInfo = {
-    tutor
+    tutors,
+    refresh,
+    setRefresh
   };
   //
   return (

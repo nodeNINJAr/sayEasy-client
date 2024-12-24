@@ -11,6 +11,7 @@ import {
 import { AiFillStar } from "react-icons/ai";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
 import UseAuth from "../../components/hooks/UseAuth";
+import toast from "react-hot-toast";
 
 //
 const TutorDetails = () => {
@@ -26,6 +27,7 @@ const TutorDetails = () => {
   const fetchTutorData = async () => {
     const { data } = await axiosSecure.get(`/tutor/${id}`);
     setTutorInfo(data);
+   
   };
   // for initial run
   useEffect(() => {
@@ -47,13 +49,15 @@ const TutorDetails = () => {
       try {
         const { data } = await axiosSecure.post("/tutor-booking", bookedInfo);
         console.log(data);
+        toast.success('tutor booked')
       } catch (err) {
-        console.log(err);
+        console.log(err.response.data);
+        toast.error(err.response.data)
       }
     } else {
       return;
     }
-    console.log(bookedInfo);
+
   };
   //
   return (
@@ -89,7 +93,7 @@ const TutorDetails = () => {
             <FaBangladeshiTakaSign />
             <span>{tutorInfo?.price}/hour</span>
           </h2>
-          <button disabled={(user?.email === tutorInfo?.email)} onClick={handleBookTutors}  className={"btn btn-primary mt-2 font-figtree"}>Book Now</button>
+          <button disabled={(user?.email === tutorInfo?.email)} onClick={handleBookTutors} className="mt-2 px-5 py-2 rounded-lg font-figtree bg-green-300 text-gray-500 disabled:bg-gray-300 disabled:text-gray-400 disabled:cursor-not-allowed">Book Now</button>
         </div>
       </div>
 
@@ -176,7 +180,7 @@ const TutorDetails = () => {
         <p className="text-gray-600 dark:text-gray-300 mt-2">
           Check my schedule to book a slot that works for you! 🗓️
         </p>
-        <button className="btn btn-primary mt-4">Book a Slot</button>
+        <button disabled={(user?.email === tutorInfo?.email)} onClick={handleBookTutors} className="mt-2 px-5 py-2 rounded-lg font-figtree bg-green-300 text-gray-500 disabled:bg-gray-300 disabled:text-gray-400 disabled:cursor-not-allowed">Book a Slot</button>
       </div>
 
       {/* Contact Section */}

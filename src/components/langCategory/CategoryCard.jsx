@@ -6,56 +6,56 @@ import UseInfo from "../hooks/UseInfo";
 
 
 const CategoryCard = () => {
-    const {tutor} = UseInfo()
+    const {tutors} = UseInfo()
   const categories = [
     {
       language: "english",
-      teachers: tutor?.filter(item=> item.language === 'english').length,
+      teachers: tutors?.filter(item=> item.language === 'english').length,
       flag: "https://flagcdn.com/w320/gb.png",
     },
     {
       language: "japanese",
-      teachers: tutor?.filter(item=> item.language === "japanese").length,
+      teachers: tutors?.filter(item=> item.language === "japanese").length,
       flag: "https://flagcdn.com/w320/jp.png",
     },
     {
       language: "spanish",
-      teachers: tutor?.filter(item=> item.language === "spanish").length,
+      teachers: tutors?.filter(item=> item.language === "spanish").length,
       flag: "https://flagcdn.com/w320/es.png",
     },
     {
       language: "chinese",
-      teachers: tutor?.filter(item=> item.language === "chinese").length,
+      teachers: tutors?.filter(item=> item.language === "chinese").length,
       flag: "https://flagcdn.com/w320/cn.png",
     },
     {
       language: "french",
-      teachers: tutor?.filter(item=> item.language === "french").length,
+      teachers: tutors?.filter(item=> item.language === "french").length,
       flag: "https://flagcdn.com/w320/fr.png",
     },
     {
       language: "italian",
-      teachers: tutor?.filter(item=> item.language === "italian").length,
+      teachers: tutors?.filter(item=> item.language === "italian").length,
       flag: "https://flagcdn.com/w320/it.png",
     },
     {
       language: "german",
-      teachers: tutor?.filter(item=> item.language === "german").length,
+      teachers: tutors?.filter(item=> item.language === "german").length,
       flag: "https://flagcdn.com/w320/de.png",
     },
     {
       language: "korean",
-      teachers: tutor?.filter(item=> item.language === "korean").length,
+      teachers: tutors?.filter(item=> item.language === "korean").length,
       flag: "https://flagcdn.com/w320/kr.png",
     },
     {
       language: "arabic",
-      teachers: tutor?.filter(item=> item.language === "arabic").length,
+      teachers: tutors?.filter(item=> item.language === "arabic").length,
       flag: "https://flagcdn.com/w320/sa.png",
     },
     {
       language: "portuguese",
-      teachers: tutor?.filter(item=> item.language === "portuguese").length,
+      teachers: tutors?.filter(item=> item.language === "portuguese").length,
       flag: "https://flagcdn.com/w320/pt.png",
     },
   ];

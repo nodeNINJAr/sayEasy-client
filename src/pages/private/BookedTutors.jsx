@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import TutorBooked from "../../components/Card/TutorBooked";
 import UseAuth from "../../components/hooks/UseAuth";
 import UseAxiosSecure from "../../components/hooks/axiosInstance/axiosSecure";
+import toast from "react-hot-toast";
 
 const BookedTutors = () => {
   // auth
@@ -21,12 +22,14 @@ const BookedTutors = () => {
   }, []);
 
   return (
-    <div>
-      <h1> booked-tutors</h1>
-      {bookedTutors?.map((tutor) => (
-        <TutorBooked key={tutor?._id} tutor={tutor} />
-      ))}
-    </div>
+  
+      <section className="p-4 my-6 md:p-8 w-11/12 mx-auto">
+        <div className="flex flex-wrap justify-center items-center gap-4 ">
+          {bookedTutors?.map((tutor) => (
+            <TutorBooked key={tutor?._id} bookedTutor={tutor} />
+          ))}
+        </div>
+      </section>
   );
 };
 

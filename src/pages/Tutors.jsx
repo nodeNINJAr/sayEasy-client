@@ -9,11 +9,11 @@ const Tutors = () => {
   const axiosSecure = UseAxiosSecure();
   // state for store tutor data
   const [tutorsData, setTutorsData] = useState([]);
-   //handle search
-  const [searchVal , setSearchVal] = useState("");  
+  //handle search
+  const [searchVal, setSearchVal] = useState("");
   // fetch all data
   const fetchALLTutor = async () => {
-    const {data} =  await axiosSecure.get(`/tutorials?search=${searchVal}`);
+    const { data } = await axiosSecure.get(`/tutorials?search=${searchVal}`);
     setTutorsData(data);
   };
   // for initial run
@@ -24,11 +24,15 @@ const Tutors = () => {
   //
   return (
     <div>
-        <ProductSearch tutorsData={tutorsData} handleSearch={setSearchVal}/>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-11/12 mx-auto">
-        {tutorsData?.map((tutor) => (
-          <TutorCard key={tutor._id} tutorData={tutor} />
-        ))}
+      <ProductSearch tutorsData={tutorsData} handleSearch={setSearchVal} />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-11/12 mx-auto justify-items-stretch">
+          {tutorsData?.map((tutor) => (
+            <TutorCard key={tutor._id} tutorData={tutor} />
+          ))}
+       
+        <div className="col-span-1">
+
+        </div>
       </div>
     </div>
   );

@@ -54,7 +54,8 @@ const AddTutorial = () => {
       })
 
     } catch (err) {
-        toast.error(err.message,'Error happened')
+        toast.error( err.response.data)
+        console.log(err.response.data);
     }
   };
   //
@@ -200,30 +201,6 @@ const AddTutorial = () => {
             rows="4"
             placeholder="Enter description"
           />
-        </div>
-
-        {/* Review Field */}
-        <div className="mb-4">
-          <label
-            htmlFor="review"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Review
-          </label>
-          <div className="mt-1 relative">
-            <input
-              type="number"
-              id="review"
-              name="review"
-              value={formData.review}
-              onChange={handleChange}
-              className="w-full p-2 pl-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter review score"
-              min="0"
-              max="5"
-            />
-            <FaStar className="absolute left-3 top-3 text-gray-500" />
-          </div>
         </div>
 
         {/* Submit Button */}
