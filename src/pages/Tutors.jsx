@@ -24,8 +24,6 @@ const Tutors = () => {
     const { data } = await axiosSecure.get(
       `/tutorials?page=${currentPage}&size=${itemPerPage}&search=${searchVal}`
     );
-
-    console.log(data.tutoirals);
     setTutorsData(data.tutoirals);
     setCount(data.count);
   };
@@ -44,12 +42,14 @@ const Tutors = () => {
             <TutorCard key={tutor._id} tutorData={tutor} />
           ))}
           {/* pagination */}
-          <Pagination
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-            pages={pages}
-            numberOfpages={numberOfpages}
-          />
+          <div className="mt-10">
+            <Pagination
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              pages={pages}
+              numberOfpages={numberOfpages}
+            />
+          </div>
         </div>
 
         <div className="col-span-1 space-y-4">

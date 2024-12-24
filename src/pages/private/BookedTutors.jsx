@@ -24,7 +24,7 @@ const BookedTutors = () => {
   return (
   
       <section className="p-4 my-6 md:p-8 w-11/12 mx-auto">
-        <div className="flex flex-wrap justify-center items-center gap-4 ">
+        <div className="flex flex-wrap justify-start items-center gap-4 ">
           {bookedTutors?.map((tutor) => (
             <TutorBooked key={tutor?._id} bookedTutor={tutor} />
           ))}
