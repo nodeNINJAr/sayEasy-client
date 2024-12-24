@@ -66,7 +66,7 @@ const modernDelete=(tutorial_id)=>{
   return (
     <div className="overflow-x-auto w-11/12 mx-auto">
       <table className="table">
-        <thead className="text-sm font-figtree font-medium capitalize dark:bg-slate-400 bg-slate-200">
+        <thead className="text-sm font-figtree font-medium capitalize dark:bg-slate-400 bg-slate-200 border-b dark:border-[#393939b7]">
           <tr>
             <th>name</th>
             <th>category</th>
@@ -81,7 +81,7 @@ const modernDelete=(tutorial_id)=>{
         {specifiedTutorials.map((tutorial) => (
           <tbody key={tutorial._id}>
             {/* row 1 */}
-            <tr className="dark:hover:bg-slate-500 hover:bg-slate-200 dark:bg-slate-600 dark:border dark:border-slate-500">
+            <tr className="dark:hover:bg-slate-500 hover:bg-slate-200 bg-white dark:bg-gray-700 border-b dark:border-gray-600 border-gray-200">
               <td>
                 <div className="flex items-center gap-3">
                   <div className="avatar">
@@ -99,13 +99,13 @@ const modernDelete=(tutorial_id)=>{
                 </div>
               </td>
               <td className="capitalize">
-                <span className="badge badge-ghost badge-neutral ">
+                <span className="badge badge-ghost badge-neutral text-[#818181] dark:text-[#a8a8a8] dark:bg-gray-600 dark:border-[#5e5e5eb7] hover:bg-[#d7dadf] capitalize truncate">
                 {tutorial?.language} 
                 </span>
               </td>
-              <td >{tutorial?.description.substring(0,60)}...</td>
-              <td> <span className="badge badge-ghost badge-neutral capitalize truncate ">{tutorial?.price} taka</span> </td>
-              <td> <span className="badge badge-ghost badge-neutral capitalize truncate">{tutorial?.review} person</span></td>
+              <td className="text-[#818181] dark:text-[#a8a8a8] truncate" >{tutorial?.description.substring(0,60)}...</td>
+              <td> <span className="badge badge-ghost badge-neutral  text-[#818181] dark:text-[#a8a8a8] dark:bg-gray-600 dark:border-[#5e5e5eb7] hover:bg-[#d7dadf] capitalize truncate ">{tutorial?.price} taka</span> </td>
+              <td> <span className="badge badge-ghost badge-neutral text-[#818181] dark:text-[#a8a8a8] dark:bg-gray-600 dark:border-[#5e5e5eb7] hover:bg-[#d7dadf] capitalize truncate">{tutorial?.review} person</span></td>
               <th>
                  <Link to={`/tutor/${tutorial?._id}`}>
                     <button className=" bg-[#efefef] flex justify-start gap-2 px-2 py-1 rounded-lg items-center text-xs font-medium truncate hover:bg-slate-400 transition-all duration-300 text-slate-600 ">

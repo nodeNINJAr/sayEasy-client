@@ -5,12 +5,13 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import arrowRight from '../../assets/lottie json file/details.json'
+import { FaBangladeshiTakaSign } from "react-icons/fa6";
 
 const TutorCard = ({ tutorData , categoriosData}) => {
   const {_id, name, tutorImage, language, description, price, review } =
     tutorData || categoriosData || {};
   return (
-    <div className="col-span-2 p-4 sm:py-4 sm:px-6 bg-white dark:bg-gray-700 border dark:border-gray-700 border-gray-200 rounded-lg shadow-md font-figtree">
+    <div className="mb-4 p-4 sm:py-4 sm:px-6 bg-white dark:bg-gray-700 border dark:border-gray-700 border-gray-200 rounded-lg shadow-md font-figtree">
     {/* Header Section */}
     <div className="flex items-center">
       {/* Profile Image */}
@@ -47,9 +48,9 @@ const TutorCard = ({ tutorData , categoriosData}) => {
 
     {/* Pricing and Actions */}
     <div className="flex justify-between items-center mt-4 gap-2">
-      <p title={`USD ${price} / hour`} className="text-base font-semibold text-gray-800 truncate ">USD {price} / hour</p>
+      <p title={`TAKA ${price} / hour`} className="text-base font-semibold dark:text-[#9c9c9c] text-gray-800 flex justify-start items-center gap-1 truncate"><FaBangladeshiTakaSign /> <span className="overflow-hidden">{price}/ hour</span></p>
     {/* Button */}
-    <div className="flex justify-center items-center gap-2 ">
+    <div className="flex justify-center items-center gap-2">
       <span className="bg-gray-300 dark:bg-gray-600 p-2 rounded-full cursor-pointer"><FaRegHeart className="text-xl text-[#818181]" /></span>
     <Link to={`/tutor/${_id}`}>
          <button className="truncate px-3 py-[2px] text-sm font-semibold rounded-full capitalize text-[#818181] dark:bg-gray-600 bg-[#E5E8ED] hover:bg-[#d7dadf] transition flex justify-between items-center gap-2">
