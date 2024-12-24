@@ -17,7 +17,7 @@ const Profile = ({user}) => {
         />
 
         {/* Hidden Profile Card */}
-        <div className="absolute top-14 -left-48 md:-left-20  w-64 bg-slate-600 dark:bg-white shadow-lg rounded-lg p-4 opacity-0 scale-95 transform transition-all duration-500 group-hover:opacity-100 group-hover:scale-100 z-10 pointer-events-none group-hover:pointer-events-auto">
+        <div className="absolute top-14 -left-48 md:-left-20  w-64 bg-slate-600 dark:bg-white shadow-lg rounded-lg p-4 opacity-0 scale-95 transform transition-all duration-500 delay-200 group-hover:opacity-100 group-hover:scale-100 z-10 pointer-events-none group-hover:pointer-events-auto">
           {/* Profile Info */}
           <div className="flex items-center gap-4 border-b pb-4">
             <div className="h-12 w-12">

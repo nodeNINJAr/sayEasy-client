@@ -13,7 +13,7 @@ const InfoProvider = ({ children }) => {
   // fetch all data
   const fetchALLTutor = async () => {
     const { data } = await axiosSecure.get('/tutorials');
-    setTutors(data);
+    setTutors(data.tutoirals);
   };
   // for initial run
   useEffect(() => {

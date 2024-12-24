@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import { MdOutlineSavedSearch } from 'react-icons/md';
 
 
-const ProductSearch = ({tutorsData , handleSearch}) => {
+const ProductSearch = ({totalTutors , handleSearch}) => {
   
     return (
       <div className="p-6 mx-auto mb-12">
         {/* Header with Search */}
         <div className="flex justify-between items-center mb-4 flex-wrap gap-4">
           <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
-            Total ({tutorsData?.length}) Tutors
+            Total ({totalTutors}) Tutors
           </h1>
           <div className="flex items-center w-full sm:w-4/6 md:w-3/6 lg:w-2/6 relative">
             <input
@@ -28,7 +28,7 @@ const ProductSearch = ({tutorsData , handleSearch}) => {
 };
 
 ProductSearch.propTypes = {
-    tutorsData:PropTypes.array.isRequired,
+  totalTutors:PropTypes.number,
     handleSearch:PropTypes.func.isRequired,
 };
 
