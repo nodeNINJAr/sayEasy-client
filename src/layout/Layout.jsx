@@ -16,7 +16,7 @@ const Layout = () => {
           {/* navbar */}
           <Navbar />
           {/* main */}
-          <main className=" dark:bg-gray-800 bg-gray-100 dark:text-gray-100 text-gray-800 py-20">
+          <main className=" dark:bg-gray-900 bg-gray-100 dark:text-gray-100 text-gray-800 pb-20">
             <Outlet />
           </main>
           {/* footer */}

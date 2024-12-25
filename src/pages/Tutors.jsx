@@ -14,7 +14,7 @@ const Tutors = () => {
   const [searchVal, setSearchVal] = useState("");
   // pagination
   const [count, setCount] = useState(0);
-  const [itemPerPage, setItemPerPage] = useState(2);
+  const [itemPerPage, setItemPerPage] = useState(4);
   const numberOfpages = Math.ceil(count / itemPerPage);
   const [currentPage, setCurrentPage] = useState(1);
   const pages = [...Array(numberOfpages).keys()];

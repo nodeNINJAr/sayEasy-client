@@ -73,7 +73,7 @@ const CategoryCard = () => {
       {categories?.map((category , idx) => (
         <div key={idx}
           onClick={() => handleCategory(category?.language)}
-          className="w-full backdrop-blur-lg px-4 py-2 flex justify-between items-center gap-4 overflow-hidden rounded-lg  cursor-pointer  dark:bg-slate-500 hover:bg-slate-200 dark:hover:bg-slate-500 transition-all ease-in-out duration-300 border dark:border-slate-600 border-slate-200"
+          className="w-full px-4 py-2 flex justify-between items-center gap-4 overflow-hidden rounded-lg  cursor-pointer bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-500 transition-all ease-in-out duration-300 border dark:border-gray-700 border-slate-200"
         >
           <div className="flex items-center justify-start gap-2  sm:w-[100px]">
             <img
@@ -83,7 +83,7 @@ const CategoryCard = () => {
             />
           </div>
           <div className="p-1">
-            <p className="text-lg font-semibold dark:text-white text-[#656565] font-figtree capitalize">
+            <p className="text-lg font-semibold dark:text-gray-400 text-[#656565] font-figtree capitalize">
               {category?.language}
             </p>
             <p className="text-[#a9a9a9] text-sm capitalize font-fira truncate">

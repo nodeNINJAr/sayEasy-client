@@ -4,7 +4,6 @@ import {
   FaEnvelope,
   FaImage,
   FaLanguage,
-  FaStar,
   FaUser,
 } from "react-icons/fa";
 import UseAuth from "../../components/hooks/UseAuth";
@@ -12,11 +11,15 @@ import toast from "react-hot-toast";
 import Lottie from "lottie-react";
 import addSuccecc from '../../assets/lottie json file/Main Scene.json'
 import UseAxiosSecure from "../../components/hooks/axiosInstance/axiosSecure";
+import UseInfo from "../../components/hooks/UseInfo";
 const AddTutorial = () => {
   // custom axios
   const axiosSecure = UseAxiosSecure()
     // auth context
-    const { user} = UseAuth()
+    const { user} = UseAuth();
+    // info context
+    const {refresh , setRefresh} = UseInfo();
+    // 
 
   // hold form value
   const [formData, setFormData] = useState({
@@ -52,6 +55,7 @@ const AddTutorial = () => {
         },
         icon: <Lottie className="w-20 h-14 mx-auto" animationData={addSuccecc} />,
       })
+      setRefresh(!refresh)
 
     } catch (err) {
         toast.error( err.response.data)
@@ -158,7 +162,10 @@ const AddTutorial = () => {
               <option value="french">French</option>
               <option value="german">German</option>
               <option value="chinese">Chinese</option>
-              <option value="japanese">Japanese</option>
+              <option value="arabic">Arabic</option>
+              <option value="korean">Korean</option>
+              <option value="portuguese">Portuguese</option>
+              <option value="italian">Italian</option>
               {/* Add more language options as needed */}
             </select>
             <FaLanguage className="absolute left-3 top-3 text-gray-500" />

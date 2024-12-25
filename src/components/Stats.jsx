@@ -15,7 +15,7 @@ const Stats = () => {
   // 
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4 w-11/12 mx-auto">
-      <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 dark:bg-gray-900 bg-gray-50 dark:text-gray-100 text-gray-800">
+      <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 text-gray-100 dark:text-gray-800">
         <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 dark:bg-violet-400 bg-violet-600">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +71,7 @@ const Stats = () => {
           <p className="capitalize">Experienced Tutors</p>
         </div>
       </div>
-      <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 dark:bg-gray-900 bg-gray-50 dark:text-gray-100 text-gray-800">
+      <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 text-gray-100 dark:text-gray-800">
         <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 dark:bg-violet-400 bg-violet-600">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +90,7 @@ const Stats = () => {
           <p className="capitalize">5-star tutor reviews</p>
         </div>
       </div>
-      <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 dark:bg-gray-900 bg-gray-50 dark:text-gray-100 text-gray-800">
+      <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 text-gray-100 dark:text-gray-800">
         <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 dark:bg-violet-400 bg-violet-600">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +112,7 @@ const Stats = () => {
           <p className="capitalize">Languages</p>
         </div>
       </div>
-      <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 dark:bg-gray-900 bg-gray-50 dark:text-gray-100 text-gray-800">
+      <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 text-gray-100 dark:text-gray-800">
         <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 dark:bg-violet-400 bg-violet-600">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -137,6 +137,7 @@ const Stats = () => {
     </div>
   );
 };
+
 
 
 export default Stats;

@@ -30,7 +30,11 @@
   right: 10px;
 }
 
-/* table */
-.radius{
-  border-radius: 35px!important;
+/* about us bg */
+.overlayBg{
+  background-image: url('./assets/image/shape-36-1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
