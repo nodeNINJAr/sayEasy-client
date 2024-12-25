@@ -64,15 +64,15 @@ const modernDelete=(tutorial_id)=>{
        }
   //
   return (
-    <div className="overflow-x-auto w-11/12 mx-auto">
-      <table className="table">
-        <thead className="text-sm font-figtree font-medium capitalize dark:bg-slate-400 bg-slate-200 border-b dark:border-[#393939b7]">
-          <tr>
+    <div className="overflow-x-auto w-11/12 mx-auto bg-[#ebebeb] dark:bg-[#121224] p-10 rounded-xl ">
+      <table className="table overflow-hidden">
+        <thead className=" text-sm font-figtree font-medium capitalize ">
+          <tr className=" bg-slate-200 dark:bg-[#222133] dark:text-slate-400 dark:border-[#393939b7] h-14">
             <th>name</th>
-            <th>category</th>
+            <th>language category</th>
             <th>Description</th>
             <th>Price</th>
-            <th>review</th>
+            <th>reviewed by</th>
             <th></th>
             <th></th>
             <th className="text-red-700">Total Tutorial : {specifiedTutorials?.length}</th>
@@ -81,7 +81,7 @@ const modernDelete=(tutorial_id)=>{
         {specifiedTutorials.map((tutorial) => (
           <tbody key={tutorial._id}>
             {/* row 1 */}
-            <tr className="dark:hover:bg-slate-500 hover:bg-slate-200 bg-white dark:bg-gray-700 border-b dark:border-gray-600 border-gray-200">
+            <tr className=" dark:hover:bg-slate-500 hover:bg-slate-200 bg-white dark:bg-[#121224] border-b  dark:border-none border-gray-200">
               <td>
                 <div className="flex items-center gap-3">
                   <div className="avatar">
