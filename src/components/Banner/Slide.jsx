@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
 
 const Slide = ({ title, subTitle, img, btnText, link }) => {
   return (
@@ -18,12 +19,20 @@ const Slide = ({ title, subTitle, img, btnText, link }) => {
           {subTitle}
         </p>
         <Link to={link}>
-          <button
+          <motion.button
+            initial={{opacity:0.25}}
+            animate={{opacity:1}}
+            transition={{duration:3,
+              repeat:Infinity,
+              repeatType:"loop",
+              ease:"easeInOut",
+
+            }}
             type="button"
             className="mt-2 md:mt-4 hover:bg-green-500 font-fira text-lg px-8 py-3 font-semibold border rounded dark:border-gray-100 border-gray-800 dark:text-gray-100 text-gray-800"
           >
             {btnText || "Get started"}
-          </button>
+          </motion.button>
         </Link>
       </div>
     </div>

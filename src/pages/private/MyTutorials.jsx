@@ -14,6 +14,7 @@ import Hero from "../../components/hero/Hero";
 import { Helmet } from "react-helmet";
 import noContent from "../../assets/lottie json file/noitemhere.json";
 import Loader2 from "../../components/Loader/Loader2";
+// 
 const MyTutorials = () => {
   //auth context
   const { user } = UseAuth();

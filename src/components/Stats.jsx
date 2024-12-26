@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import UseInfo from "./hooks/UseInfo";
 import { Slide } from "react-awesome-reveal";
+import CountUp from "react-countup";
 
+//
 const Stats = () => {
   const { tutorCount, tutors, usersCount } = UseInfo();
   const [reviewCount, setReviewCount] = useState();
@@ -12,7 +14,7 @@ const Stats = () => {
     }, 0);
     setReviewCount(totalReview);
   }, [tutors]);
-  //
+
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4 w-11/12 mx-auto">
       <Slide direction="left">
@@ -68,7 +70,9 @@ const Stats = () => {
             </svg>
           </div>
           <div className="flex flex-col justify-center align-middle">
-            <p className="text-3xl font-semibold leading-none">{tutorCount}+</p>
+            <span className="text-3xl font-semibold leading-none">
+              <CountUp start={0} end={tutorCount} duration={5}></CountUp>+
+            </span>
             <p className="capitalize">Experienced Tutors</p>
           </div>
         </div>
@@ -89,9 +93,9 @@ const Stats = () => {
             </svg>
           </div>
           <div className="flex flex-col justify-center align-middle">
-            <p className="text-3xl font-semibold leading-none">
-              {reviewCount}+
-            </p>
+          <span className="text-3xl font-semibold leading-none">
+              <CountUp start={0} end={reviewCount} duration={5} easing="easeOut"></CountUp>+
+            </span>
             <p className="capitalize">5-star tutor reviews</p>
           </div>
         </div>
@@ -115,7 +119,9 @@ const Stats = () => {
             </svg>
           </div>
           <div className="flex flex-col justify-center align-middle">
-            <p className="text-3xl font-semibold leading-none">10+</p>
+            <span className="text-3xl font-semibold leading-none">
+               <CountUp start={0} end={10} duration={5} easing="easeOut"></CountUp>+
+            </span>
             <p className="capitalize">Languages</p>
           </div>
         </div>
@@ -139,7 +145,9 @@ const Stats = () => {
             </svg>
           </div>
           <div className="flex flex-col justify-center align-middle">
-            <p className="text-3xl font-semibold leading-none">{usersCount}+</p>
+          <span className="text-3xl font-semibold leading-none">
+               <CountUp start={0} end={usersCount} duration={5} easing="easeOut"></CountUp>+
+            </span>
             <p className="capitalize">Total Users</p>
           </div>
         </div>

@@ -27,7 +27,7 @@ const Navbar = () => {
 
   //
   return (
-    <nav className=" dark:bg-gray-900 bg-gray-50 dark:text-gray-100 text-gray-800 p-4">
+    <nav className=" dark:bg-gray-800 bg-gray-50 dark:text-gray-100 text-gray-800 p-4">
       <div className="flex items-center justify-between ">
         {/* Logo */}
         <div className="text-2xl font-bold flex justify-start items-center gap-4">

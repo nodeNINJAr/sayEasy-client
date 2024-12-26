@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MdOutlineSavedSearch } from 'react-icons/md';
-
+import {motion} from 'framer-motion'
 
 const ProductSearch = ({totalTutors , handleSearch}) => {
   
@@ -20,7 +20,18 @@ const ProductSearch = ({totalTutors , handleSearch}) => {
             
               onChange={(e)=>handleSearch(e.target.value)}
             />
-            <MdOutlineSavedSearch className='absolute right-6 text-3xl dark:text-[#c2c2c2] text-[#585858]' />
+             <motion.span
+              initial={{opacity:0.25}}
+              animate={{opacity:1}}
+              transition={{duration:3,
+                repeat:Infinity,
+                repeatType:"loop",
+                ease:"easeInOut",
+  
+              }}
+             className='absolute right-6'>
+               <MdOutlineSavedSearch className='text-3xl dark:text-[#c2c2c2] text-[#585858]' />
+             </motion.span>
           </div>
         </div>
       </div>

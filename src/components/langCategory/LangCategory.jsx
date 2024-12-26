@@ -2,6 +2,7 @@ import React from "react";
 import CategoryCard from "./CategoryCard";
 import curve from "../../assets/image/curve.png";
 import { Slide } from "react-awesome-reveal";
+import {motion} from "framer-motion";
 
 const LangCategory = () => {
   return (
@@ -11,7 +12,7 @@ const LangCategory = () => {
           <h1 className="text-center text-4xl sm:text-5xl capitalize font-figtree font-semibold">
             language category
           </h1>
-          <img className="h-10 -mt-3" src={curve} alt="" />
+          <motion.img  initial={{opacity:0.25}} animate={{opacity:1}} transition={{ type: 'spring', duration:4, repeat: Infinity, repeatType: "loop", ease: "easeInOut",   }} className="h-10 -mt-3" src={curve} alt="" />
           <p className="text-lg font-figtree dark:text-gray-400 text-gray-500 text-center">
             Explore diverse languages with SayEasy, offering courses for all
             levels to help

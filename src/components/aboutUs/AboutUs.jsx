@@ -3,7 +3,7 @@ import { FaCheck, FaAward } from "react-icons/fa";
 import aboutImg from "../../assets/image/about-01.jpg";
 import VideoCard from "./VideoCard";
 import { Slide } from "react-awesome-reveal";
-
+import {motion} from "framer-motion"
 const AboutUs = () => {
   return (
     <div className=" flex flex-wrap md:flex-nowrap gap-6 items-center justify-between dark:bg-gray-900 px-4 py-10  lg:py-32">
@@ -20,7 +20,7 @@ const AboutUs = () => {
               alt="Person learning"
               className="rounded-lg shadow-lg w-full "
             />
-            <div className=" absolute bottom-2  md:bottom-32 lg:-bottom-12 left-2 md:-left-3 lg:-left-20 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg flex items-center space-x-2">
+            <motion.div initial={{ x: -30}} animate={{x: 0}} transition={{ type: 'spring', duration:3, repeat: Infinity, repeatType: "loop",ease: "easeInOut",   }} className=" absolute bottom-2  md:bottom-32 lg:-bottom-12 left-2 md:-left-3 lg:-left-20 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg flex items-center space-x-2">
               <FaAward className="text-teal-500 text-2xl" />
               <div>
                 <div className="text-teal-500 text-xl font-bold">29+</div>
@@ -28,7 +28,7 @@ const AboutUs = () => {
                   Wonderful Awards
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </Slide>
       </div>

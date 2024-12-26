@@ -7,7 +7,6 @@ import {
   FaEnvelope,
   FaImage,
   FaLanguage,
-  FaStar,
   FaUser,
 } from "react-icons/fa";
 import Lottie from "lottie-react";
@@ -15,6 +14,8 @@ import updatefailed from "../../assets/lottie json file/loginError.json";
 import updateSuccess from "../../assets/lottie json file/uploadComplete.json";
 import Hero from "../../components/hero/Hero";
 import { Helmet } from "react-helmet";
+import { MdOutlineUpdate } from "react-icons/md";
+import {motion} from "framer-motion";
 
 //
 const UpdateTutorials = () => {
@@ -104,12 +105,13 @@ const UpdateTutorials = () => {
         >
           <fieldset className="grid grid-cols-4 gap-10 px-6 py-10 rounded-md shadow-sm dark:bg-gray-700 bg-gray-50 font-figtree">
             <div className="space-y-2 col-span-full lg:col-span-1">
-              <p
+              <motion.p
+               initial={{opacity:0.25}} animate={{opacity:1}} transition={{ type: 'spring', duration:5, repeat: Infinity, repeatType: "loop", ease: "easeInOut",   }}
                 title="Update tutorial"
                 className="font-medium uppercase text-4xl font-fira text-gray-400 truncate"
               >
                 Update tutorial
-              </p>
+              </motion.p>
               <p className="text-sm text-gray-500 font-montserrat py-4">
                 🌟 Share your knowledge and inspire learners! 🌍 Become a
                 language tutor and help others master new languages. 🗣️ Whether
@@ -262,9 +264,9 @@ const UpdateTutorials = () => {
               <div className="mb-4 col-span-full sm:col-span-1">
                 <button
                   type="submit"
-                  className="font-semibold w-full bg-orange-500 text-white py-2 px-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="flex justify-center items-center gap-2 font-semibold w-full bg-orange-500 text-white py-2 px-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
-                  Update
+                  <span>Update</span> <motion.span initial={{opacity:0.25}} animate={{opacity:1}} transition={{ type: 'spring', duration:4, repeat: Infinity, repeatType: "loop", ease: "easeInOut",   }}><MdOutlineUpdate className="text-xl" /> </motion.span>
                 </button>
               </div>
             </div>

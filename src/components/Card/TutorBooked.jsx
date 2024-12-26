@@ -25,7 +25,7 @@ const TutorBooked = ({ bookedTutor }) => {
         toast.success("Your review has been added successfully!");
       }
     } catch (err) {
-      console.log(err.response.data);
+      // console.log(err.response.data);
     }
   };
 
