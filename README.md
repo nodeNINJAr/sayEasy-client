@@ -40,4 +40,6 @@
 * mongodb(database)
 * Jwt (Authentication)
 
+### ⚠ Caution : Search for tutors on the find-tutor page ,  when its default data is it searches from all collections and when paginated data is it searches from only the paginate items on the page
+
 ### This projects made by [Mehedi Hasan](https://github.com/web-dev-mehedi)

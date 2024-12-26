@@ -20,7 +20,7 @@ const InfoProvider = ({ children }) => {
   const fetchALLTutor = async () => {
     const { data } = await axiosSecure.get('/tutorials');
     setTutors(data.tutoirals);
-    setTutorCount(data.count)
+    setTutorCount(data.uniqueTutorCount)
   };
   // for initial run
   useEffect(() => {

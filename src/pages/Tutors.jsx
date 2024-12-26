@@ -9,8 +9,11 @@ import { useLocation } from "react-router-dom";
 import VideoCard from "../components/aboutUs/VideoCard";
 import { Helmet } from "react-helmet";
 import { Fade } from "react-awesome-reveal";
+import Loader2 from "../components/Loader/Loader2";
 
 const Tutors = () => {
+  //
+  const [loader, setLoader] = useState(true);
   // custom axios hooks
   const axiosSecure = UseAxiosSecure();
   //
@@ -33,6 +36,7 @@ const Tutors = () => {
     );
     setTutorsData(data.tutoirals);
     setCount(data.count);
+    setLoader(false);
   };
   // for initial run
   useEffect(() => {
@@ -52,20 +56,32 @@ const Tutors = () => {
         <ProductSearch totalTutors={count} handleSearch={setSearchVal} />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-y-10 sm:gap-8 w-11/12 mx-auto ">
           <div className="col-span-2">
-            {tutorsData?.map((tutor) => (
-              <TutorCard key={tutor._id} tutorData={tutor} />
-            ))}
-            {/* pagination */}
-            <div className="mt-10">
-              <Pagination
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-                pages={pages}
-                numberOfpages={numberOfpages}
-              />
-            </div>
-          </div>
+            {!loader ?
+              <>
+                {tutorsData.length > 0 ? (
+                  <>
+                    {tutorsData?.map((tutor) => (
+                      <TutorCard key={tutor._id} tutorData={tutor} />
+                    ))}
 
+                    {/* pagination */}
+                    <div className="mt-10">
+                      <Pagination
+                        currentPage={currentPage}
+                        setCurrentPage={setCurrentPage}
+                        pages={pages}
+                        numberOfpages={numberOfpages}
+                      />
+                    </div>
+                  </>
+                ) : (
+                  <p className="flex justify-center items-center py-10 sm:py-24 capitalize text-2xl font-figtree ">
+                    No Tutors Found
+                  </p>
+                )}
+              </> : <Loader2/>
+            }
+          </div>
           <div className="col-span-1 space-y-4">
             <h1 className="font-figtree text-[#6a6a6a] dark:text-[#a8a8a8] font-semibold text-xl bg-gray-300 dark:bg-gray-700 px-4 py-2 rounded-lg">
               Tutor Preview Randomly:{" "}

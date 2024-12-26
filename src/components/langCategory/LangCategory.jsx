@@ -19,11 +19,10 @@ const LangCategory = () => {
           </p>
         </div>
       </Slide>
-      <Slide direction="up">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center ">
-          <CategoryCard />
-        </div>
-      </Slide>
+       {/* category card */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center ">
+        <CategoryCard />
+      </div>
     </>
   );
 };
