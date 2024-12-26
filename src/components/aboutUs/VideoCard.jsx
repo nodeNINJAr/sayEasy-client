@@ -8,7 +8,7 @@ const VideoCard = () => {
         <img
           src="https://via.placeholder.com/400x200" 
           alt="Video thumbnail"
-          className="rounded-lg"
+          className="rounded-lg w-full mx-auto"
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <button

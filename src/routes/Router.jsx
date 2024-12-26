@@ -13,6 +13,7 @@ import UpdateTutorials from '../pages/private/UpdateTutorials';
 import NotFoundPage from '../pages/NotFoundPage';
 import TutorDetails from '../pages/private/TutorDetails';
 import CategoriseTutors from '../pages/private/CategoriseTutors';
+import Community from '../pages/Community';
 
 const Router = () => {
     return (
@@ -20,6 +21,7 @@ const Router = () => {
             <Route path='/' element={<Layout/>}>
                <Route index={true} element={<Home/>}/>
                <Route path='/tutors' element={<Tutors/>}/>
+               <Route path='/community' element={<Community/>}/>
                {/* private route */}
                <Route path='/tutorials' element={<PrivateRoute><MyTutorials/></PrivateRoute>}/>
                <Route path='/tutor/:id' element={<PrivateRoute><TutorDetails/></PrivateRoute>}/>

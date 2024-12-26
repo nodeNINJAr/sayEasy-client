@@ -38,3 +38,16 @@
   background-size: cover;
 }
 
+.bg-banner{
+  background-image: url('./assets/image/edublink-breadcrumb-bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-banner2{
+  background-image: url('./assets/image/edublink-breadcrumb-bg.png');
+  background-position:left;
+  background-repeat: no-repeat;
+  background-size:cover;
+}

@@ -6,7 +6,7 @@ import { MdOutlineSavedSearch } from 'react-icons/md';
 const ProductSearch = ({totalTutors , handleSearch}) => {
   
     return (
-      <div className="p-6 mx-auto mb-12">
+      <div className="p-6 mx-auto mb-6 md:mb-10">
         {/* Header with Search */}
         <div className="flex justify-between items-center mb-4 flex-wrap gap-4">
           <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
