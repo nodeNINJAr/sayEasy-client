@@ -35,11 +35,18 @@
 * lottie-react
 * swiper-slider
 * axios
-#### Back-end :
-* express(server)
-* mongodb(database)
-* Jwt (Authentication)
 
-### ⚠ Caution : Search for tutors on the find-tutor page ,  when its default data is it searches from all collections and when paginated data is it searches from only the paginate items on the page
 
-### This projects made by [Mehedi Hasan](https://github.com/web-dev-mehedi)
+## Steps to Run the Project Locally
+
+This is instructions for running the project locally on your machine after cloning it from GitHub.
+------------------
+Before running this project locally, ensure you have the following installed:
+
+- **Git** (for cloning the repository)
+- **Node.js** (for running JavaScript applications)
+- **npm** (run "npm-i" on you cmd)
+
+
+
+
