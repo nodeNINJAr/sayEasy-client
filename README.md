@@ -39,13 +39,13 @@
 
 ## Steps to Run the Project Locally
 
-This is instructions for running the project locally on your machine after cloning it from GitHub.
+**This is instructions for running the project locally on your machine after cloning it from GitHub.**
 ------------------
 Before running this project locally, ensure you have the following installed:
 
 - **Git** (for cloning the repository)
 - **Node.js** (for running JavaScript applications)
-- **npm** (run "npm-i" on you cmd)
+- **npm** (run "npm-i" on your cmd)
 
 
 
