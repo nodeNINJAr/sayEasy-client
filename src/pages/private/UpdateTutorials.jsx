@@ -261,7 +261,7 @@ const UpdateTutorials = () => {
               </div>
 
               {/* Submit Button */}
-              <div className="mb-4 col-span-full sm:col-span-1">
+              <div className="mb-4 col-span-full sm:col-span-2 xl:col-span-1">
                 <button
                   type="submit"
                   className="flex justify-center items-center gap-2 font-semibold w-full bg-orange-500 text-white py-2 px-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"

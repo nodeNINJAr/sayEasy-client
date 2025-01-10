@@ -14,7 +14,7 @@ const Home = () => {
       <Helmet>
         <title>Home || sayEasy</title>
       </Helmet>
-      <section className="py-6 lg:py-20 sm:px-6 ">
+      <section className="py-6 xl:py-10 sm:px-6 ">
         <Slider />
       </section>
       {/* stats */}

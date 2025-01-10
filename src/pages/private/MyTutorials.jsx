@@ -43,7 +43,6 @@ const MyTutorials = () => {
         toast.success(
           "Tutorial deleted successfully! 🗑️ The record has been removed. ✅",
           {
-            duration: 1000,
             position: "top-right",
             style: {
               background: "#f44336",

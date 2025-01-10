@@ -27,7 +27,7 @@ const Navbar = () => {
 
   //
   return (
-    <nav className=" dark:bg-gray-800 bg-gray-50 dark:text-gray-100 text-gray-800 p-4">
+    <nav className=" dark:bg-gray-800 bg-gray-50 dark:text-gray-100 text-gray-800 p-4 sm:px-4 sm:py-5 sticky top-0 z-50">
       <div className="flex items-center justify-between ">
         {/* Logo */}
         <div className="text-2xl font-bold flex justify-start items-center gap-4">
@@ -37,7 +37,7 @@ const Navbar = () => {
               {isOpen ? <FaTimes /> : <FaBars />}
             </button>
           </div>
-          <a href="/">SayEasy</a>
+          <a className="text-4xl sm:text-5xl font-figtree" href="/">Say<span className="text-red-600 ">Easy</span></a>
         </div>
 
         {/* Menu for large screens */}
@@ -57,7 +57,7 @@ const Navbar = () => {
               <Link to="/">
                 <button
                   onClick={handleSignOut}
-                  className="w-full  capitalize bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                  className="w-full capitalize bg-[#9A59C9] text-white px-4 py-2 rounded hover:bg-[#b252f7]"
                 >
                   sign Out
                 </button>
