@@ -48,6 +48,9 @@ const Navbar = () => {
           <li className="list-none">
             <NavLink to="/tutors">Find tutors</NavLink>
           </li>
+          <li className="list-none">
+            <NavLink to="/community">Community</NavLink>
+          </li>
 
           {user ? (
             <>
@@ -103,6 +106,9 @@ const Navbar = () => {
             <li className="list-none">
               <NavLink to="/tutors">Find tutors</NavLink>
             </li>
+            <li className="list-none">
+            <NavLink to="/community">Community</NavLink>
+          </li>
             {user ? (
               <>
                 <li>
