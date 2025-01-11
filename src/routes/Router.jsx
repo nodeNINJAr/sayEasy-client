@@ -15,6 +15,7 @@ import TutorDetails from '../pages/private/TutorDetails';
 import CategoriseTutors from '../pages/private/CategoriseTutors';
 import Community from '../pages/Community';
 import AddPost from '../pages/private/AddPost';
+import MyPost from '../pages/private/MyPost';
 
 const Router = () => {
     return (
@@ -31,7 +32,7 @@ const Router = () => {
                <Route path='/add-tutorial' element={<PrivateRoute><AddTutorial/></PrivateRoute>}/>
                <Route path='/update-tutorial/:id' element={<PrivateRoute><UpdateTutorials/></PrivateRoute>}/>
               
-               <Route path='/update-tutorial/:id' element={<PrivateRoute><UpdateTutorials/></PrivateRoute>}/>
+               <Route path='/my-posts' element={<PrivateRoute><MyPost/></PrivateRoute>}/>
                 {/* auth */}
                 <Route path='/login' element={<Login/>}/>
                 <Route path='/signUp' element={<SignUp/>}/>

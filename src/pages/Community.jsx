@@ -4,7 +4,7 @@ import useAxiosPublic from "../components/hooks/axiosInstance/useAxiosPublic";
 import CommunityCard from "../components/Card/CommunityCard";
 import TutorCard from "../components/Card/TutorCard";
 import Hero from "../components/hero/Hero";
-import {  useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import AddPost from "./private/AddPost";
 import { Button } from "@headlessui/react";
 
@@ -20,14 +20,13 @@ const Community = () => {
     setIsOpen(false);
   }
 
-
   //
   const location = useLocation();
   //
   const axiosPublic = useAxiosPublic();
 
   //
-  const { data: communityPosts = [] , refetch } = useQuery({
+  const { data: communityPosts = [], refetch } = useQuery({
     queryKey: ["community-posts"],
     queryFn: async () => {
       const { data } = await axiosPublic("/communityPosts");
@@ -35,7 +34,7 @@ const Community = () => {
     },
   });
   //
-  const { data: tutorials = [],  } = useQuery({
+  const { data: tutorials = [] } = useQuery({
     queryKey: ["latest-tutorials"],
     queryFn: async () => {
       const { data } = await axiosPublic("/latest-tutorials");
@@ -59,14 +58,14 @@ const Community = () => {
                 onClick={open}
                 className="rounded-md bg-black/20 dark:bg-white/20 py-2 px-4 text-base font-medium text-white focus:outline-none data-[hover]:bg-black/30 data-[focus]:outline-1 data-[focus]:outline-white"
               >
-               Add Post
+                Add Post
               </Button>
 
-              <Button
-                className="rounded-md bg-black/20 dark:bg-white/20 py-2 px-4 text-base font-medium text-white focus:outline-none data-[hover]:bg-black/30 data-[focus]:outline-1 data-[focus]:outline-white"
-              >
-               My Post
-              </Button>
+              <Link to='/my-posts'>
+                <Button className="rounded-md bg-black/20 dark:bg-white/20 py-2 px-4 text-base font-medium text-white focus:outline-none data-[hover]:bg-black/30 data-[focus]:outline-1 data-[focus]:outline-white">
+                  My Post
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="grid grid-cols-1">
