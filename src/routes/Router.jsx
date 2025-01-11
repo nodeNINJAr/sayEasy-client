@@ -14,6 +14,7 @@ import NotFoundPage from '../pages/NotFoundPage';
 import TutorDetails from '../pages/private/TutorDetails';
 import CategoriseTutors from '../pages/private/CategoriseTutors';
 import Community from '../pages/Community';
+import AddPost from '../pages/private/AddPost';
 
 const Router = () => {
     return (
@@ -28,6 +29,8 @@ const Router = () => {
                <Route path='/tutors/:category' element={<PrivateRoute><CategoriseTutors/></PrivateRoute>}/>
                <Route path='/tutors/booked' element={<PrivateRoute><BookedTutors/></PrivateRoute>}/>
                <Route path='/add-tutorial' element={<PrivateRoute><AddTutorial/></PrivateRoute>}/>
+               <Route path='/update-tutorial/:id' element={<PrivateRoute><UpdateTutorials/></PrivateRoute>}/>
+              
                <Route path='/update-tutorial/:id' element={<PrivateRoute><UpdateTutorials/></PrivateRoute>}/>
                 {/* auth */}
                 <Route path='/login' element={<Login/>}/>

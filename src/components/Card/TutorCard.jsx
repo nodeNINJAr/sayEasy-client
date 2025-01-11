@@ -7,9 +7,9 @@ import arrowRight from "../../assets/lottie json file/details.json";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
 import { Fade } from "react-awesome-reveal";
 
-const TutorCard = ({ tutorData, categoriosData }) => {
+const TutorCard = ({ tutorData, categoriosData, latesttutotial }) => {
   const { _id, name, tutorImage, language, description, price, review } =
-    tutorData || categoriosData || {};
+    tutorData || categoriosData || latesttutotial || {};
   return (
     <Fade duration={800}>
       <div className="mb-4 p-4 sm:py-4 sm:px-6 bg-white dark:bg-gray-700 border dark:border-gray-700 border-gray-200 rounded-lg shadow-md font-figtree">

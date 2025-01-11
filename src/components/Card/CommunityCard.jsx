@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Fade } from "react-awesome-reveal";
 import { CiCalendarDate } from 'react-icons/ci';
 import { Link } from 'react-router-dom';
+import Comments from '../comments/Comments';
 
 const CommunityCard = ({post}) => {
-const {username,userImage,postContent,date,category} = post || {}
+const {_id,username,userImage,postContent,date,category} = post || {};
+const [seeMore, setSeeMore]= useState(true);
+const [viewComments, setViewComments] = useState(false)
 
     return (
         <Fade duration={800}>
@@ -42,7 +45,7 @@ const {username,userImage,postContent,date,category} = post || {}
   
           {/* post details */}
           <div className="mt-4 dark:text-[#7d7d7d] text-gray-700">
-            <p className="truncate">{postContent}...</p>
+            <p className="">{seeMore ? <>{postContent.substring(0,70) }...<span onClick={()=>setSeeMore(!seeMore)} className='truncate font-semibold text-black cursor-pointer underline'>See more</span></> : <>{postContent}</>  }</p>
           </div>
   
           {/*post date and comments section*/}
@@ -50,17 +53,20 @@ const {username,userImage,postContent,date,category} = post || {}
             <p
               className="text-base font-semibold dark:text-[#9c9c9c] text-gray-800 flex justify-start items-center gap-1 truncate"
             >
-              <span className="overflow-hidden flex justify-start items-center gap-2"> <CiCalendarDate /> Posted On :{date}</span>
+              <span className="overflow-hidden flex justify-start items-center gap-1"> <CiCalendarDate /> Posted On :{date}</span>
             </p>
             {/* Button */}
             <div className="flex justify-center items-center gap-2">
               <Link>
-                <button className="truncate px-3 py-[2px] text-sm font-semibold rounded-full capitalize text-[#818181] dark:bg-gray-600 bg-[#E5E8ED] hover:bg-[#d7dadf] transition flex justify-between items-center gap-2">
-                  <span>Comments</span>{" "}
+                <button onClick={()=>setViewComments(!viewComments)}  className="truncate px-3 py-[2px] text-sm font-semibold rounded-full capitalize text-[#818181] dark:bg-gray-600 bg-[#E5E8ED] hover:bg-[#d7dadf] transition flex justify-between items-center gap-2">
+                  <span>Comments</span>
                 </button>
               </Link>
             </div>
           </div>
+          {viewComments &&
+            <Comments postId={_id}/>
+          }
         </div>
       </Fade>
     );
