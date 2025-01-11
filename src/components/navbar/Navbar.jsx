@@ -21,13 +21,13 @@ const Navbar = () => {
         toast.success("👋 You’ve successfully signed out. See you next time!");
       })
       .catch((err) => {
-        console.log(err);
+       
       });
   };
 
   //
   return (
-    <nav className=" dark:bg-gray-800 bg-gray-50 dark:text-gray-100 text-gray-800 p-4 sm:px-4 sm:py-5 sticky top-0 z-50">
+    <nav className="dark:bg-gray-800 bg-gray-50 dark:text-gray-100 text-gray-800 p-4 sm:px-4 sm:py-5 sticky top-0 z-50">
       <div className="flex items-center justify-between ">
         {/* Logo */}
         <div className="text-2xl font-bold flex justify-start items-center gap-4">
@@ -95,7 +95,7 @@ const Navbar = () => {
 
       {/* Menu for small screens */}
       {isOpen && (
-        <div className="absolute top-0 right-0 w-3/4 sm:w-1/2 h-full bg-gray-800 z-50 text-white p-6 md:hidden transition-all duration-300">
+        <div className="z-50 fixed top-0 right-0 w-3/4 sm:w-1/2 h-full bg-gray-800  text-white p-6 md:hidden transition-all duration-300">
           <ul className="space-y-4 capitalize font-figtree ">
             <li className="list-none">
               <NavLink to="/">Home</NavLink>
@@ -110,7 +110,7 @@ const Navbar = () => {
                   <Link to="/">
                     <button
                       onClick={handleSignOut}
-                      className="w-full capitalize bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                      className="w-full capitalize bg-[#9A59C9] text-white px-4 py-2 rounded hover:bg-[#b252f7]"
                     >
                       sign Out
                     </button>

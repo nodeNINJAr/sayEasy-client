@@ -35,7 +35,7 @@ const AddTutorial = () => {
     tutorImage: user?.photoURL,
     image: "",
     language: "",
-    price: "",
+    price: '',
     description: "",
     review: 0,
   });
@@ -52,7 +52,7 @@ const AddTutorial = () => {
     e.preventDefault();
     // send data to backend
     try {
-      await axiosSecure.post("/add-tutorials", formData);
+      await axiosSecure.post("/add-tutorials", {...formData, price:parseFloat(formData?.price)});
       toast.success(
         "Tutorial added successfully! ➕ Your new entry has been saved. 🎉",
         {

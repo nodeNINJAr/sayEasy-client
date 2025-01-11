@@ -30,10 +30,16 @@ const Tutors = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const pages = [...Array(numberOfpages).keys()];
 
+
+// sort
+const handleSort =(sortedItem)=>{
+       fetchALLTutor(sortedItem)
+}
+
   // fetch all data
-  const fetchALLTutor = async () => {
+  const fetchALLTutor = async (sortedItem) => {
     const { data } = await axiosSecure.get(
-      `/tutorials?page=${currentPage}&size=${itemPerPage}&search=${searchVal}`
+      `/tutorials?page=${currentPage}&size=${itemPerPage}&search=${searchVal}&sortBy=${sortedItem}`
     );
     setTutorsData(data.tutoirals);
     setCount(data.count);
@@ -71,7 +77,7 @@ if(loader){
       <Hero path={location.pathname.split("/")} />
       {/* search bar */}
       <div className="py-10 md:py-16">
-        <ProductSearch totalTutors={count} handleSearch={setSearchVal} />
+        <ProductSearch handleSort={handleSort} totalTutors={count} handleSearch={setSearchVal} />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-y-10 sm:gap-8 w-11/12 mx-auto ">
           <div className="col-span-2">
             {tutorsData.length > 0 ? (
