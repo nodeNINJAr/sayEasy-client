@@ -6,7 +6,7 @@ const Hero = ({ path }) => {
     <div className="bg-banner2 sm:bg-banner">
       <div className="bg-[#131313aa] py-12 sm:py-28 sm:px-10 ">
         <Slide direction="down">
-          <h1 className="text-center capitalize font-bold font-mono text-3xl sm:text-4xl w-full sm:w-11/12 xl:w-7/12 mx-auto text-gray-300 leading-snug mb-4">
+          <h1 className="text-center capitalize font-medium font-sans text-3xl sm:text-4xl w-full sm:w-11/12 xl:w-7/12 mx-auto text-gray-300 xl:leading-snug mb-4">
             Your Path to Language Mastery, One Word at a Time!
           </h1>
         </Slide>
@@ -28,7 +28,7 @@ const Hero = ({ path }) => {
                   >
                     <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
                   </svg>
-                  {}
+                 
                 </a>
               </li>
               <li className="flex items-center space-x-2">

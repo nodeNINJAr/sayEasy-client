@@ -22,7 +22,7 @@ const Home = () => {
         <Stats />
       </section>
       {/* categorySlider */}
-      <section className="w-full sm:w-11/12 mx-auto py-14 dark:bg-slate-900 bg-gray-100 dark:text-gray-100 text-gray-800 px-4 sm:px-0">
+      <section className="w-full sm:w-11/12 mx-auto pb-14 pt-20 dark:bg-slate-900 bg-gray-100 dark:text-gray-100 text-gray-800 px-4 sm:px-0">
         <LangCategory />
       </section>
       <section>

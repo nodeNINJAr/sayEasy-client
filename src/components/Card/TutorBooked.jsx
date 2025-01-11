@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import UseInfo from "../hooks/UseInfo";
 import { Fade } from "react-awesome-reveal";
 
-const TutorBooked = ({ bookedTutor }) => {
+const TutorBooked = ({ bookedTutor,  refetch }) => {
   //
   const { tutors, setRefresh, refresh } = UseInfo();
   // custom axios
@@ -38,7 +38,17 @@ const TutorBooked = ({ bookedTutor }) => {
       setReviewed(alreadyReviwed);
     }
   }, [tutors, bookedTutor._id]);
+  // cancle booked tutor
+  const handleCancle = async(id)=>{
+    const {data} = await axiosSecure.delete(`/booked-tutors/${id}`);
+    if(data?.deletedCount === 1){
+      refetch()
+       toast.success("Session Canceld ")
+    }
+  }
 
+
+  // 
   return (
     <Fade duration={1000}>
       <div className="flex justify-between items-start gap-4 p-3  rounded-lg bg-gray-700 dark:bg-gray-200 dark:text-gray-800">
@@ -78,7 +88,7 @@ const TutorBooked = ({ bookedTutor }) => {
             >
               {reviewed ? "Reviewed" : "Review"}
             </button>
-            <button className="px-4 py-[2px] bg-red-100 rounded-lg  font-medium">
+            <button onClick={()=>handleCancle(bookedTutor?._id)} className="px-4 py-[2px] bg-red-100 rounded-lg  font-medium">
               Cancle
             </button>
           </div>
