@@ -88,7 +88,7 @@ With **live virtual classrooms**, **secure booking & payment systems**, and **cu
 
 1. Clone the repository:  
    ```sh
-   git clone https://github.com/yourusername/sayeasy-client.git
+   git clone https://github.com/nodeNINJAr/sayEasy-client
    cd sayeasy-client
    ```  
 2. Install dependencies:  
