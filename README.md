@@ -1,6 +1,4 @@
-Here is a well-structured and detailed **README.md** file for your **SayEasy (Online Tutor Booking Platform)**:  
 
----
 
 # **SayEasy** 🎓 – *Online Tutor Booking Platform*  
 
@@ -36,7 +34,6 @@ With **live virtual classrooms**, **secure booking & payment systems**, and **cu
   - [⚙️ Environment Variables](#️-environment-variables)
   - [🛠 Troubleshooting](#-troubleshooting)
   - [🤝 Contributing](#-contributing)
-  - [📄 License](#-license)
 
 ---
 
@@ -186,12 +183,3 @@ We welcome contributions! Follow these steps:
 4. Push to the branch (`git push origin feature-branch`)  
 5. Open a Pull Request  
 
----
-
-## 📄 License  
-
-This project is licensed under the **MIT License**.  
-
----
-
-This **README** provides a **detailed overview** of the **SayEasy** client application. Feel free to update the repository links, descriptions, and configurations based on your actual implementation. 🚀😊
