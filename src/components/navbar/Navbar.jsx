@@ -37,11 +37,11 @@ const Navbar = () => {
               {isOpen ? <FaTimes /> : <FaBars />}
             </button>
           </div>
-          <a className="text-4xl sm:text-5xl font-figtree" href="/">Say<span className="text-[#9A59C9] ">Easy</span></a>
+          <a className="text-3xl sm:text-[2.8rem] font-figtree" href="/">Say<span className="text-[#9A59C9] ">Easy</span></a>
         </div>
 
         {/* Menu for large screens */}
-        <ul className="hidden md:flex space-x-6 capitalize font-figtree justify-end items-center w-1/2 lg:w-7/12">
+        <ul className="hidden md:flex space-x-6 capitalize font-figtree justify-end items-center w-7/12">
           <li className="list-none">
             <NavLink to="/">Home</NavLink>
           </li>

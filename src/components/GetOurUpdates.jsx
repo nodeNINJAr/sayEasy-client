@@ -47,7 +47,7 @@ const GetOurUpdates = () => {
               />
               <button
                 type="submit"
-                className="w-2/5 p-3 font-semibold rounded-r-lg sm:w-1/3 bg-violet-400 dark:bg-violet-600 text-gray-900 dark:text-gray-50"
+                className="w-2/5 p-3 font-semibold rounded-r-lg sm:w-1/3 bg-[#9A59C9] text-gray-900 dark:text-gray-50"
               >
                 Subscribe
               </button>

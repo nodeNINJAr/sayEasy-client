@@ -41,7 +41,7 @@ const AboutUs = () => {
           </p>
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white ">
             Learn & Grow Your Skills From{" "}
-            <span className="text-pink-500">Anywhere</span>
+            <span className="text-[#9A59C9]">Anywhere</span>
           </h2>
           <p className="mt-4 text-gray-600 dark:text-gray-400 text-left">
             SayEasy is your ultimate language-learning platform, offering 50+

@@ -26,10 +26,10 @@ const Router = () => {
                <Route path='/tutors' element={<Tutors/>}/>
                <Route path='/community' element={<Community/>}/>
                <Route path='/ratings' element={<Ratings/>}/>
+               <Route path='/tutors/:category' element={<CategoriseTutors/>}/>
                {/* private route */}
                <Route path='/tutorials' element={<PrivateRoute><MyTutorials/></PrivateRoute>}/>
                <Route path='/tutor/:id' element={<PrivateRoute><TutorDetails/></PrivateRoute>}/>
-               <Route path='/tutors/:category' element={<PrivateRoute><CategoriseTutors/></PrivateRoute>}/>
                <Route path='/tutors/booked' element={<PrivateRoute><BookedTutors/></PrivateRoute>}/>
                <Route path='/add-tutorial' element={<PrivateRoute><AddTutorial/></PrivateRoute>}/>
                <Route path='/update-tutorial/:id' element={<PrivateRoute><UpdateTutorials/></PrivateRoute>}/>
