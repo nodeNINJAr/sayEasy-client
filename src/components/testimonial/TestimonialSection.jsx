@@ -8,7 +8,8 @@ import "swiper/css/effect-cards";
 import "./swiper.css";
 import { Slide } from "react-awesome-reveal";
 import { IoMdArrowForward } from "react-icons/io";
-import {motion} from "framer-motion"
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 //
 const TestimonialsSection = () => {
@@ -76,9 +77,24 @@ const TestimonialsSection = () => {
             success
             <br /> stories and language-learning journeys with SayEasy.
           </p>
-          <button className="flex justify-center items-center gap-2 mt-4 bg-teal-500 hover:bg-teal-600 text-white px-6 py-2 rounded-lg shadow">
-            <span>View All</span> <motion.span initial={{x:-10}} animate={{x:0}} transition={{ type: 'spring', duration:4, repeat: Infinity, repeatType: "loop",ease: "easeInOut",   }}><IoMdArrowForward className="text-xl"/></motion.span>
-          </button>
+          <Link to={'/ratings'}>
+            <button className="flex justify-center items-center gap-2 mt-4 bg-[#9A59C9] hover:bg-[#9047c4] text-white px-6 py-2 rounded-lg shadow">
+              <span>View All</span>{" "}
+              <motion.span
+                initial={{ x: -10 }}
+                animate={{ x: 0 }}
+                transition={{
+                  type: "spring",
+                  duration: 4,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  ease: "easeInOut",
+                }}
+              >
+                <IoMdArrowForward className="text-xl" />
+              </motion.span>
+            </button>
+          </Link>
         </Slide>
       </div>
 

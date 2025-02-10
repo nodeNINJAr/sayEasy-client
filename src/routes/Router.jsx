@@ -16,6 +16,7 @@ import CategoriseTutors from '../pages/private/CategoriseTutors';
 import Community from '../pages/Community';
 import AddPost from '../pages/private/AddPost';
 import MyPost from '../pages/private/MyPost';
+import Ratings from '../pages/Ratings';
 
 const Router = () => {
     return (
@@ -24,6 +25,7 @@ const Router = () => {
                <Route index={true} element={<Home/>}/>
                <Route path='/tutors' element={<Tutors/>}/>
                <Route path='/community' element={<Community/>}/>
+               <Route path='/ratings' element={<Ratings/>}/>
                {/* private route */}
                <Route path='/tutorials' element={<PrivateRoute><MyTutorials/></PrivateRoute>}/>
                <Route path='/tutor/:id' element={<PrivateRoute><TutorDetails/></PrivateRoute>}/>
