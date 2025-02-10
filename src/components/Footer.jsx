@@ -20,7 +20,7 @@ const Footer = () => {
                   <path d="M18.266 26.068l7.839-7.854 4.469 4.479c1.859 1.859 1.859 4.875 0 6.734l-1.104 1.104c-1.859 1.865-4.875 1.865-6.734 0zM30.563 2.531l-1.109-1.104c-1.859-1.859-4.875-1.859-6.734 0l-6.719 6.734-6.734-6.734c-1.859-1.859-4.875-1.859-6.734 0l-1.104 1.104c-1.859 1.859-1.859 4.875 0 6.734l6.734 6.734-6.734 6.734c-1.859 1.859-1.859 4.875 0 6.734l1.104 1.104c1.859 1.859 4.875 1.859 6.734 0l21.307-21.307c1.859-1.859 1.859-4.875 0-6.734z"></path>
                 </svg>
               </div>
-               <a className="text-4xl sm:text-5xl font-semibold font-figtree" href="/">Say<span className="text-red-600 ">Easy</span></a>
+               <a className="text-4xl sm:text-5xl font-semibold font-figtree" href="/">Say<span className="text-[#9A59C9] ">Easy</span></a>
             </a>
             <p className="text-sm font-figtree font-medium text-gray-600 dark:text-gray-200 leading-6">
               With SayEasy, unlock the world through language. Learn, connect,
@@ -194,13 +194,13 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        {/* copywrite footer */}
-        <div className="text-center py-6 border-t border-gray-300 dark:border-gray-700">
-          <div className="py-4 text-center text-gray-700 dark:text-gray-400 text-lg">
+      </div>
+      {/* copywrite footer */}
+      <div className="mt-5 text-center py-6 border-t border-gray-300 dark:border-gray-700">
+          <div className="py-[10px] text-center text-gray-700 dark:text-gray-400 text-lg">
             © 2025 SayEasy || All rights reserved.
           </div>
         </div>
-      </div>
     </footer>
   );
 };
