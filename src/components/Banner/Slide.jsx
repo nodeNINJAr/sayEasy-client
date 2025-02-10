@@ -29,7 +29,7 @@ const Slide = ({ title, subTitle, img, btnText, link }) => {
 
             }}
             type="button"
-            className="mt-2 md:mt-4 hover:bg-green-500 font-fira text-lg px-8 py-3 font-semibold border rounded dark:border-gray-100 border-gray-800 dark:text-gray-100 text-gray-800"
+            className="mt-2 md:mt-4 hover:bg-[#9A59C9] font-fira text-lg px-8 py-3 font-semibold border rounded dark:border-gray-100 border-gray-800 dark:text-gray-100 text-gray-800"
           >
             {btnText || "Get started"}
           </motion.button>

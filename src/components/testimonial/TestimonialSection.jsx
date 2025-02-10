@@ -69,7 +69,7 @@ const TestimonialsSection = () => {
               disableOnInteraction: false, // Keeps autoplay running after user interaction
             }}
           >
-            {testimonials.map((testimonial, index) => (
+            {testimonials.slice(0,5).map((testimonial, index) => (
               <SwiperSlide key={index}>
                 {" "}
                 <TestimonialCard {...testimonial} />
