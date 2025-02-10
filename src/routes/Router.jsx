@@ -14,7 +14,6 @@ import NotFoundPage from '../pages/NotFoundPage';
 import TutorDetails from '../pages/private/TutorDetails';
 import CategoriseTutors from '../pages/private/CategoriseTutors';
 import Community from '../pages/Community';
-import AddPost from '../pages/private/AddPost';
 import MyPost from '../pages/private/MyPost';
 import Ratings from '../pages/Ratings';
 
