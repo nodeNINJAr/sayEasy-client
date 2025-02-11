@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaRegHeart, FaShieldAlt } from "react-icons/fa";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
@@ -6,10 +6,28 @@ import Lottie from "lottie-react";
 import arrowRight from "../../assets/lottie json file/details.json";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
 import { Fade } from "react-awesome-reveal";
+import UseAxiosSecure from "../hooks/axiosInstance/axiosSecure";
+import useWishlist from "../hooks/useWishlist";
+import toast from "react-hot-toast";
 
 const TutorCard = ({ tutorData, categoriosData, latesttutotial }) => {
   const { _id, name, tutorImage, language, description, price, review } =
     tutorData || categoriosData || latesttutotial || {};
+    //
+  const [wishlist, ,refetch] = useWishlist();
+  const axiosSecure = UseAxiosSecure();
+  const handleWishList = async (id) => {
+   const {data} = await axiosSecure.post("/add-To-Wishlist", { id });
+    //
+    if(data?.insertedId){
+      toast.success("tutorials added to wishlist")
+      refetch();
+    }
+  };
+  //
+  const isOnWishlist = wishlist.find(item=>item?._id === _id);
+  
+  //
   return (
     <Fade duration={800}>
       <div className="mb-4 p-4 sm:py-4 sm:px-6 bg-white dark:bg-gray-700 border dark:border-gray-700 border-gray-200 rounded-lg shadow-md font-figtree">
@@ -65,7 +83,10 @@ const TutorCard = ({ tutorData, categoriosData, latesttutotial }) => {
           </p>
           {/* Button */}
           <div className="flex justify-center items-center gap-2">
-            <span className="bg-gray-300 dark:bg-gray-600 p-2 rounded-full cursor-pointer">
+            <span
+              onClick={() => handleWishList(_id)}
+              className={`${isOnWishlist && "bg-[#B252F7] cursor-not-allowed opacity-50 text-white"} bg-gray-300 dark:bg-gray-600 p-2 rounded-full cursor-pointer`}
+            >
               <FaRegHeart className="text-xl text-[#818181]" />
             </span>
             <Link to={`/tutor/${_id}`}>

@@ -3,6 +3,7 @@ import { FiUser } from "react-icons/fi";
 import { MdAddToPhotos } from "react-icons/md";
 import { SiAlchemy } from "react-icons/si";
 import { CiBookmarkCheck } from "react-icons/ci";
+import { BsBookmarkHeart } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 
 const Profile = ({user}) => {
@@ -60,8 +61,15 @@ const Profile = ({user}) => {
               to="/tutors/booked"
               className="flex items-center gap-3 w-full  text-gray-200 dark:text-gray-700 hover:bg-gray-500 dark:hover:bg-gray-100 p-2 rounded"
             >
-              <CiBookmarkCheck className="text-lg" />
+              <CiBookmarkCheck className="text-xl" />
               <span className="text-sm font-medium">My Booked Tutors</span>
+            </NavLink>
+            <NavLink
+              to="/wishlist"
+              className="flex items-center gap-3 w-full  text-gray-200 dark:text-gray-700 hover:bg-gray-500 dark:hover:bg-gray-100 p-2 rounded"
+            >
+               <BsBookmarkHeart className="text-lg" />
+              <span className="text-sm font-medium">My WishList</span>
             </NavLink>
           </div>
         </div>

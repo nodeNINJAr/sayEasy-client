@@ -16,6 +16,7 @@ import CategoriseTutors from '../pages/private/CategoriseTutors';
 import Community from '../pages/Community';
 import MyPost from '../pages/private/MyPost';
 import Ratings from '../pages/Ratings';
+import WishList from '../pages/private/WishList';
 
 const Router = () => {
     return (
@@ -32,7 +33,7 @@ const Router = () => {
                <Route path='/tutors/booked' element={<PrivateRoute><BookedTutors/></PrivateRoute>}/>
                <Route path='/add-tutorial' element={<PrivateRoute><AddTutorial/></PrivateRoute>}/>
                <Route path='/update-tutorial/:id' element={<PrivateRoute><UpdateTutorials/></PrivateRoute>}/>
-              
+               <Route path='/wishlist' element={<PrivateRoute><WishList/></PrivateRoute>}/>
                <Route path='/my-posts' element={<PrivateRoute><MyPost/></PrivateRoute>}/>
                 {/* auth */}
                 <Route path='/login' element={<Login/>}/>

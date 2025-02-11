@@ -8,6 +8,8 @@ import Lottie from "lottie-react";
 import noContent from "../../assets/lottie json file/noitemhere.json";
 import Loader2 from "../../components/Loader/Loader2";
 import { useQuery } from "@tanstack/react-query";
+
+// 
 const BookedTutors = () => {
   // auth
   const { user } = UseAuth();
@@ -33,7 +35,7 @@ const BookedTutors = () => {
 
   //
   return (
-    <section className="">
+    <section>
       <Helmet>
         <title>Booked Tutors || sayEasy</title>
       </Helmet>
