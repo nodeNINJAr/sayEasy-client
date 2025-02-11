@@ -14,9 +14,12 @@ import useRatings from "../hooks/useRatings";
 
 //
 const TestimonialsSection = () => {
-  const testimonials = useRatings();
+  const [userRatings, isLoading] = useRatings();
+// 
 
-
+if (isLoading) {
+  return <div className="text-center place-content-center place-items-center">Loading...</div>;
+}
   // 
   return (
     <div className="flex flex-wrap sm:flex-nowrap justify-between items-center gap-8 font-figtree">
@@ -66,10 +69,10 @@ const TestimonialsSection = () => {
             className="mySwiper"
             autoplay={{
               delay: 3000, // Time between slide changes (in milliseconds)
-              disableOnInteraction: false, // Keeps autoplay running after user interaction
+              disableOnInteraction: true, // Keeps autoplay running after user interaction
             }}
           >
-            {testimonials.slice(0,5).map((testimonial, index) => (
+            {userRatings.slice(0,5).map((testimonial, index) => (
               <SwiperSlide key={index}>
                 {" "}
                 <TestimonialCard {...testimonial} />
