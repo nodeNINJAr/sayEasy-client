@@ -37,7 +37,7 @@ const Navbar = () => {
               {isOpen ? <FaTimes /> : <FaBars />}
             </button>
           </div>
-          <a className="text-3xl sm:text-[2.8rem] font-figtree" href="/">Say<span className="text-[#9A59C9] ">Easy</span></a>
+          <a className="text-3xl sm:text-[2.8rem] font-figtree mb-1" href="/">Say<span className="text-[#9A59C9] ">Easy</span></a>
         </div>
 
         {/* Menu for large screens */}
