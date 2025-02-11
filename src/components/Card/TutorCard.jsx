@@ -17,11 +17,17 @@ const TutorCard = ({ tutorData, categoriosData, latesttutotial }) => {
   const [wishlist, ,refetch] = useWishlist();
   const axiosSecure = UseAxiosSecure();
   const handleWishList = async (id) => {
-   const {data} = await axiosSecure.post("/add-To-Wishlist", { id });
-    //
-    if(data?.insertedId){
-      toast.success("tutorials added to wishlist")
-      refetch();
+    //  
+    try{
+      const {data} = await axiosSecure.post("/add-To-Wishlist", { id });
+      //
+      if(data?.insertedId){
+        toast.success("tutorials added to wishlist")
+        refetch();
+      }
+    }
+    catch{
+      toast.error('Please login first to add to wishlist')
     }
   };
   //
@@ -85,7 +91,7 @@ const TutorCard = ({ tutorData, categoriosData, latesttutotial }) => {
           <div className="flex justify-center items-center gap-2">
             <span
               onClick={() => handleWishList(_id)}
-              className={`${isOnWishlist?._id === _id ? "bg-[#B252F7] cursor-not-allowed opacity-40" :' bg-gray-300 dark:bg-gray-600 cursor-pointer'} p-2 rounded-full`}
+              className={`${isOnWishlist?._id === _id ? "bg-gray-300 cursor-not-allowed opacity-40" :' bg-gray-300 dark:bg-gray-600 cursor-pointer'} p-2 rounded-full`}
             >
               <FaRegHeart className="text-xl text-[#818181]" />
             </span>
